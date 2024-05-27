@@ -399,7 +399,7 @@ footer p {
   .container-principal {
     max-width: 100vw;
     overflow: hidden;
-    display: flex;
+    display: block;
     flex-direction: column;
   }
   /* navbar */
