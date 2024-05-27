@@ -412,7 +412,7 @@ footer p {
   /* imagen y texto principal */
   .container-header {
     flex-direction: column;
-    height: 70vh;
+    height: 100vh;
     flex-direction: column-reverse;
   }
   .container-text-header {
@@ -426,11 +426,19 @@ footer p {
   .container-img-header {
     flex: 1;
     display: flex;
-    padding: 0px;
+    justify-content: center; 
+    align-items: center;  
+    width: 90%;
+    max-width: 100%;      
   }
+  
   .img-header {
-    width: 70%;
+    width: 100%;
+    height: auto;          /* Mantiene la proporción de la imagen */
+    object-fit: contain;   /* Ajusta la imagen dentro del contenedor */
+    max-width: 100%;       /* Asegura que la imagen no sea más grande que su contenedor */
   }
+  
 
   .images-services {
     display: flex;
