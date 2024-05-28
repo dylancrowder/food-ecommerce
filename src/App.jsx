@@ -63,7 +63,7 @@ function App() {
             </a>
           </nav>
 
-          <div className="container-header">
+         {/*  <div className="container-header">
             <div className="container-text-header">
               <h1 className="title-header-text">Nosotros te lo enviamos.</h1>
               <p className="p-header-paragraph">
@@ -75,8 +75,12 @@ function App() {
             <div className="container-img-header">
               <img className="img-header" src={img} alt="Comida deliciosa" />
             </div>
-          </div>
+          </div> */}
         </header> 
+
+
+
+
 
         <main className="main-container">
           <section className="nuestro-servicio-container">
