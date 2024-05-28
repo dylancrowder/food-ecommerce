@@ -39,10 +39,10 @@ body {
   width: 100%;
 }
 
-.container-text-header {
+.container-text-header  {
   flex: 1;
   padding: 20px;
-  text-align: left;
+  text-align: start;
 }
 
 .title-header-text {
@@ -405,15 +405,16 @@ footer p {
   }
   .header-container {
     padding-top: 35px;
-    height: 80vh;
+    height: 100vh;
     background-color: #dbd805;
   }
+.button-header{
 
+}
   .nav-container {
     font-size: 1.1rem;
     padding: 20px;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
-
     width: 70%;
   }
   /* imagen y texto principal */
@@ -424,7 +425,7 @@ footer p {
     flex-direction: column-reverse;
   }
   .container-text-header {
-    padding: 20px;
+    padding: 0px
   }
 
   .container-text-header h1 {
