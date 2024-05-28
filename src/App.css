@@ -350,7 +350,7 @@ footer {
   background-color: #333;
   color: #fff;
   text-align: center;
-  height: 35vh;
+  height: 50vh;
 }
 
 .footer-container {
@@ -407,7 +407,7 @@ footer p {
   }
   .header-container {
     padding-top: 35px;
-    height: 80vh;
+    height: 100vh;
     background-color: #dbd805;
   }
 
@@ -464,7 +464,6 @@ footer p {
     padding-inline: 20px;
     margin: 0px;
     margin-bottom: 0px;
-   
   }
 
   .img-container-customers {
@@ -561,12 +560,10 @@ footer p {
 
   footer {
     display: flex;
-
     flex-direction: column;
     justify-content: start;
-    height: 120vh;
+    height: auto;
     margin-top: 80px;
     padding: 40px;
   }
-
 }
