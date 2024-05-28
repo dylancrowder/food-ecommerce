@@ -398,11 +398,11 @@ footer p {
     max-width: 100vw;
     display: block;
     overflow: hidden;
-    display: block;
   }
 
   .header-container {
     display: flex;
+    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
     margin: 0px;
     height: 100vh;
     max-height: 100vh;
@@ -414,7 +414,7 @@ footer p {
   .nav-container {
     font-size: 1.1rem;
     padding: 20px;
-    margin: 25px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
     width: 70%;
   }
   /* imagen y texto principal */
@@ -427,7 +427,7 @@ footer p {
   }
 
   .container-text-header h1 {
-    font-size: 3rem;
+    font-size: 2rem; /* Reduce el tamaño de la fuente para pantallas más pequeñas */
     margin-top: 10px;
   }
   .container-img-header {
@@ -440,6 +440,8 @@ footer p {
     object-fit: contain; /* Ajusta la imagen dentro del contenedor */
     max-width: 100%; /* Asegura que la imagen no sea más grande que su contenedor */
   }
+}
+
 
   .images-services {
     display: flex;
@@ -558,7 +560,7 @@ footer p {
     display: flex;
     justify-content: start;
     flex-direction: column;
-    height: 70vh;
+    height: auto;
     margin: 0px;
     padding: 0px;
   }
