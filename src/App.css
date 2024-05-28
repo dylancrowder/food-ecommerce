@@ -6,8 +6,15 @@ body {
   color: #333;
 }
 
-
 /* Contenedor de navegación */
+.header-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #dbd805;
+}
 .nav-container {
   display: flex;
   padding-block: 20px;
@@ -21,6 +28,44 @@ body {
   color: #fff;
   font-size: 1.6rem;
 }
+
+.container-header {
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.container-text-header {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.title-header-text {
+  font-size: 5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+.p-header-paragraph {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+.container-img-header {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.img-header {
+  max-width: 100%;
+}
+
+/* hasta acaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 a {
   text-decoration: none;
   color: #ffffff;
@@ -40,43 +85,6 @@ a {
   display: flex;
 }
 
-/* Contenedor del encabezado */
-.header-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-color: #dbd805;
-}
-
-.container-header {
-  height: 90vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  max-width: 1300px;
-  width: 100%;
-}
-/* aca */
-.container-text-header {
-  flex: 1;
-  padding: 20px;
-  text-align: left;
-}
-
-.title-header-text {
-  font-size: 5rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.p-header-paragraph {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 30px;
-}
-
 .button-header {
   padding: 15px 30px;
   font-size: 1.1rem;
@@ -91,17 +99,6 @@ a {
 
 .button-header:hover {
   background-color: #e67e22;
-}
-
-.container-img-header {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.img-header {
-  max-width: 100%;
 }
 
 /* Servicios */
@@ -402,9 +399,8 @@ footer p {
     display: block;
     overflow: hidden;
     display: block;
- 
   }
-  
+
   .nav-container {
     font-size: 1.1rem;
     padding: 20px;
@@ -413,9 +409,8 @@ footer p {
   }
   /* imagen y texto principal */
   .container-header {
-    flex-direction: column;
+    display: block;
     height: 100vh;
-    flex-direction: column-reverse;
   }
   .container-text-header {
     padding: 20px;
