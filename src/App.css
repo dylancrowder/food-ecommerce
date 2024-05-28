@@ -560,7 +560,7 @@ footer p {
     flex-direction: column;
     height: auto;
     margin: 0px;
-    padding: 0px;
+    padding-block: 40px;
   }
   .footer-container {
     margin: 0px;

@@ -50,7 +50,7 @@ function App() {
     <>
       <div className="container-principal">
       <header className="header-container">
-          <nav className="nav-container " aria-label="Main navigation">
+          {/* <nav className="nav-container " aria-label="Main navigation">
             <a href="#" className="nav-text">
               Home
             </a>
@@ -61,7 +61,7 @@ function App() {
             <a href="#" className="nav-text">
               Cart
             </a>
-          </nav>
+          </nav> */}
 
          {/*  <div className="container-header">
             <div className="container-text-header">
