@@ -49,7 +49,7 @@ function App() {
   return (
     <>
       <div className="container-principal">
-        <header className="header-container">
+  {/*       <header className="header-container">
           <nav className="nav-container " aria-label="Main navigation">
             <a href="#" className="nav-text">
               Home
@@ -76,7 +76,7 @@ function App() {
               <img className="img-header" src={img} alt="Comida deliciosa" />
             </div>
           </div>
-        </header>
+        </header> */}
 
         <main className="main-container">
           <section className="nuestro-servicio-container">
