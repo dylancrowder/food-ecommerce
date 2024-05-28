@@ -8,12 +8,12 @@ body {
 
 /* Contenedor de navegación */
 .header-container {
-  /*   display: flex;
+  display: flex;
   height: 100vh;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #dbd805; */
+  background-color: #dbd805;
 }
 .nav-container {
   display: flex;
@@ -420,6 +420,8 @@ footer p {
   .container-header {
     display: block;
     height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
   }
   .container-text-header {
     padding: 20px;
