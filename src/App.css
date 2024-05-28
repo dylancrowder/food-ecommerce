@@ -6,6 +6,10 @@ body {
   color: #333;
 }
 
+* {
+  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total del elemento */
+}
+
 /* Contenedor de navegación */
 .nav-container {
   display: flex;
@@ -424,18 +428,15 @@ footer p {
     margin-top: 10px;
   }
   .container-img-header {
- 
     width: 90%;
-    max-width: 100%
+    max-width: 100%;
   }
-  
+
   .img-header {
     width: 100%;
-        /* Mantiene la proporción de la imagen */
-    object-fit: contain;   /* Ajusta la imagen dentro del contenedor */
-    max-width: 100%;       /* Asegura que la imagen no sea más grande que su contenedor */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+    max-width: 100%; /* Asegura que la imagen no sea más grande que su contenedor */
   }
-  
 
   .images-services {
     display: flex;
@@ -554,7 +555,7 @@ footer p {
     display: flex;
     justify-content: start;
     flex-direction: column;
-    height: 72vh;
+    height: 70vh;
     margin: 0px;
     padding: 0px;
   }
