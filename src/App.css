@@ -6,9 +6,6 @@ body {
   color: #333;
 }
 
-* {
-  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total del elemento */
-}
 
 /* Contenedor de navegación */
 .nav-container {
@@ -402,11 +399,14 @@ footer p {
 @media (max-width: 800px) {
   .container-principal {
     max-width: 100vw;
+    display: block;
     overflow: hidden;
     display: block;
-    flex-direction: column;
+ 
   }
-  /* navbar */
+  .header-container{
+    display: block;
+  }
   .nav-container {
     font-size: 1.1rem;
     padding: 20px;
