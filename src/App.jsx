@@ -49,9 +49,8 @@ function App() {
   return (
     <>
       <div className="container-principal">
-      <header className="header-container">
-        <p className="testp"> casa</p>
-          {/* <nav className="nav-container " aria-label="Main navigation">
+        <header className="header-container">
+          <nav className="nav-container " aria-label="Main navigation">
             <a href="#" className="nav-text">
               Home
             </a>
@@ -62,9 +61,9 @@ function App() {
             <a href="#" className="nav-text">
               Cart
             </a>
-          </nav> */}
+          </nav>
 
-         {/*  <div className="container-header">
+          <div className="container-header">
             <div className="container-text-header">
               <h1 className="title-header-text">Nosotros te lo enviamos.</h1>
               <p className="p-header-paragraph">
@@ -76,12 +75,8 @@ function App() {
             <div className="container-img-header">
               <img className="img-header" src={img} alt="Comida deliciosa" />
             </div>
-          </div> */}
-        </header> 
-
-
-
-
+          </div>
+        </header>
 
         <main className="main-container">
           <section className="nuestro-servicio-container">
@@ -176,7 +171,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div  className="text-container-customers">
+            <div className="text-container-customers">
               <header className="servicio-text-container text-customer-header">
                 <h2>Clientes</h2>
                 <h3>Lo que dicen nuestros clientes</h3>
@@ -240,7 +235,7 @@ function App() {
                 </li>
               </ul>
             </div>
-            
+
             <div className="footer-column">
               <h3>Contacto</h3>
               <ul>
