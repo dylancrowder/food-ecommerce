@@ -50,6 +50,7 @@ function App() {
     <>
       <div className="container-principal">
       <header className="header-container">
+        <p className="testp"> casa</p>
           {/* <nav className="nav-container " aria-label="Main navigation">
             <a href="#" className="nav-text">
               Home
