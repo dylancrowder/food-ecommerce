@@ -39,7 +39,7 @@ body {
   width: 100%;
 }
 
-.container-text-header  {
+.container-text-header {
   flex: 1;
   padding: 20px;
   text-align: start;
@@ -178,6 +178,8 @@ a {
   padding-block: 50px;
 }
 
+.menus-card-container {
+}
 /* cards */
 .card-container {
   margin-bottom: 60px;
@@ -405,12 +407,10 @@ footer p {
   }
   .header-container {
     padding-top: 35px;
-    height: 100vh;
+    height: 80vh;
     background-color: #dbd805;
   }
-.button-header{
 
-}
   .nav-container {
     font-size: 1.1rem;
     padding: 20px;
@@ -425,12 +425,13 @@ footer p {
     flex-direction: column-reverse;
   }
   .container-text-header {
-    padding: 0px
+    padding: 0px;
+    padding-inline: 20px;
   }
 
   .container-text-header h1 {
     font-size: 2rem; /* Reduce el tamaño de la fuente para pantallas más pequeñas */
-    margin-top: 10px;
+    margin-top: 0px;
   }
   .container-img-header {
     width: 90%;
@@ -460,7 +461,10 @@ footer p {
   .container-customers {
     display: flex;
     flex-direction: column-reverse;
-    padding: 20px;
+    padding-inline: 20px;
+    margin: 0px;
+    margin-bottom: 0px;
+   
   }
 
   .img-container-customers {
@@ -557,17 +561,12 @@ footer p {
 
   footer {
     display: flex;
-    justify-content: start;
+
     flex-direction: column;
-    height: auto;
-    margin: 0px;
-    padding-block: 40px;
+    justify-content: start;
+    height: 120vh;
+    margin-top: 80px;
+    padding: 40px;
   }
-  .footer-container {
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
 }
