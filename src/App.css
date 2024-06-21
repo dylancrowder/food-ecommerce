@@ -178,9 +178,7 @@ a {
   padding-block: 50px;
 }
 
-.menus-card-container {
-}
-/* cards */
+
 .card-container {
   margin-bottom: 60px;
 }
@@ -407,7 +405,7 @@ footer p {
   }
   .header-container {
     padding-top: 35px;
-    height: 100vh;
+    height: 98vh;
     background-color: #dbd805;
   }
 
