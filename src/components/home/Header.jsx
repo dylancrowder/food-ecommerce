@@ -1,22 +1,11 @@
 import PropTypes from "prop-types";
+import NavBar from "../generalComponents/NavBar";
 import { Link } from "react-router-dom";
 export function Header({ img }) {
   return (
     <>
       <header className="header-container">
-        <nav className="nav-container" aria-label="Main navigation">
-          <a href="#" className="nav-text">
-            Home
-          </a>
-          <Link to="/products">
-            <a href="#" className="nav-text">
-              Products
-            </a>
-          </Link>
-          <a href="#" className="nav-text">
-            Cart
-          </a>
-        </nav>
+        <NavBar />
 
         <div className="container-header">
           <div className="container-text-header">
