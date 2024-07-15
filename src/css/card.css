@@ -1,0 +1,130 @@
+/* Estilos existentes */
+
+.card-container {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.card {
+  width: 290px;
+  height: 420px;
+  margin-inline: 12px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.342);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  text-align: start;
+  width: 92%;
+  padding: 12px;
+}
+
+.cart-title {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 0px;
+  margin-block: 0px;
+  margin-bottom: 6px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.cart-parraf {
+  font-family: Verdana, Geneva, sans-serif;
+  margin-bottom: 0px;
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flexbox-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -moz-line-clamp: 1;
+  -ms-line-clamp: 1;
+  line-clamp: 1;
+  transition: -webkit-line-clamp 0.3s ease;
+}
+
+.card-footer .price {
+  padding-block: 0px;
+  margin: 0px;
+  margin-block: 8px;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.text-card {
+  width: 100%;
+}
+
+.food-img-container {
+  width: 290px;
+  height: 330px;
+}
+
+.food-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-img-service {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.card:hover .cart-parraf {
+  -webkit-line-clamp: unset;
+  -moz-line-clamp: unset;
+  -ms-line-clamp: unset;
+  line-clamp: unset;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.button-card-compra {
+  width: 100%;
+  height: 42px;
+  background-color: #188132;
+  border: 1px solid black;
+  color: white;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-card-compra:hover {
+  background-color: #0056b3;
+}

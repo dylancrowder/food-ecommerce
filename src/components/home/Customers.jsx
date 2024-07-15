@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "../../css/customers.css"
 export function Customers({
   foodCustomer2,
   foodCustomer3,
@@ -23,8 +24,8 @@ export function Customers({
         </div>
         <div className="text-container-customers">
           <header className="servicio-text-container text-customer-header">
-            <h2>Clientes</h2>
-            <h3>Nuestros clientes</h3>
+            <h2 className="title-customers"> Clientes</h2>
+            <h3 className="subtitle-customers">Nuestros clientes</h3>
           </header>
           <div data-aos="fade-left" className="card-client-container">
             <div className="client-card">

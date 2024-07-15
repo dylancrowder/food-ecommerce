@@ -1,93 +1,53 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import img from "../../img/comida.png";
-
+import {
+  faHome,
+  faCartPlus,
+  faShoppingBag,
+} from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import "../../css/navBar.css";
+import { CartShopping } from "./CartShopping";
 export default function NavBar() {
   const [cart, setCart] = useState(false);
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Comida", price: 300, quantity: 2 },
-    { id: 2, name: "Comida", price: 300, quantity: 2 }
-    // Puedes agregar más ítems si lo deseas
-  ]);
-
-  function handleCart() {
+  const [cartItems, setCartItems] = useState([]);
+  const handleCart = async () => {
+    const response = await axios.get("http://localhost:8080/api/cart/find", {
+      withCredentials: true,
+    });
     setCart((cart) => !cart);
-    console.log(cart);
-  }
-
-  function handleBuy() {
-    alert("Compra realizada!");
-
-  }
-
-  function handleDeleteItem(id) {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  }
-
-  const total = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+    setCartItems(response.data.items);
+  };
 
   return (
     <>
-      <nav className="nav-container">
-        <Link to="/">
-          <a href="#" className="nav-text">
-            Home
-          </a>
-        </Link>
-        <Link to="/products">
-          <a href="#" className="nav-text">
-            Products
-          </a>
-        </Link>
+      <div className="links-h">
+        <nav className="nav-container">
+          <Link className="link-a" to="/">
+            <FontAwesomeIcon className="icon-nav" icon={faHome} size="1x" />
+            <p className="parraf-nav">Home</p>
+          </Link>
+          <Link className="link-a" to="/products">
+            <FontAwesomeIcon className="icon-nav" icon={faCartPlus} size="1x" />
+            <p className="parraf-nav">Products</p>
+          </Link>
 
-        <a onClick={handleCart} className="nav-text">
-          Cart
-        </a>
-      </nav>
-      <div className={`cart-side ${cart ? "open" : ""}`}>
-        <div className="nav-cart">
-          <button className="close-btn" onClick={handleCart}>
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
-
-          <h3 className="title-cart">Cart</h3>
-        </div>
-
-        <div className="cont-img">
-          {cartItems.map((item) => (
-            <div key={item.id} className="info-cart-container">
-              <img src={img} className="img-cart" alt="cart-food" />
-              <div className="info-cart">
-                <button className="btn-quantity">+</button>
-                <p> {item.quantity}</p>
-                <button className="btn-quantity">-</button>
-                <FontAwesomeIcon icon={faTrashAlt} className="trash-icon" />
-              </div>
-              <div
-                className="delete-container"
-                onClick={() => handleDeleteItem(item.id)}
-              >
-                <p className="p-price">${item.price}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="cart-total">
-          <div className="total">
-            <h4>Total:</h4>
-            <h4> ${total}</h4>
-          </div>
-
-          <button onClick={handleBuy} className="buy-btn">
-            Comprar
-          </button>
-        </div>
+          <Link className="link-a" onClick={handleCart}>
+            <FontAwesomeIcon
+              className="icon-nav"
+              icon={faShoppingBag}
+              size="1x"
+            />
+            <p className="parraf-nav">Cart</p>
+          </Link>
+        </nav>
+        <CartShopping
+          cart={cart}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+          handleCart={handleCart}
+        />
       </div>
     </>
   );

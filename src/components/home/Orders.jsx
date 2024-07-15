@@ -1,21 +1,35 @@
 import { Link } from "react-router-dom";
 import CardProduct from "../generalComponents/CardProduct";
+import useFetchProducts from "../../hooks/Hooks";
+import "../../css/orders.css";
+
 export function Orders() {
+  const { products, loading, error } = useFetchProducts(
+    "http://localhost:8080/api/four"
+  );
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error fetching products: {error.message}</p>;
+
   return (
     <>
       <section className="menus-container menus-card-container">
-        <header className="servicio-text-container">
-          <h2>Nuestros menús</h2>
+        <header className="order-text-container">
           <h3>Los más pedidos</h3>
-          <p>Estos son los menús favoritos de nuestros clientes.</p>
+          <h2>Nuestros menús</h2>
         </header>
 
         <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-          <CardProduct />
+          <CardProduct products={products} />
         </div>
-        <Link to="/products">
-          <button className="button-header service-button">Menus</button>
-        </Link>
+        <div className="btt">
+          <div className="highlighted-container">
+   
+            <Link to="/products">
+              <button className="button-header service-button btn-order">Menus</button>
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );

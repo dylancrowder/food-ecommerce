@@ -1,0 +1,107 @@
+.container-customers {
+  display: flex;
+  padding-block: 0px;
+  overflow: hidden;
+  background-color: #dbd805;
+
+}
+
+.client-card {
+  padding: 25px;
+  border-radius: 18px;
+  background-color: #333;
+}
+.img-container-customers {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 60px;
+}
+
+.text-container-customers {
+  width: 50%;
+}
+
+.img-customer img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.img-customer-2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.img-customer-2 div {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.img-customer-2 div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* text customers */
+
+.text-container-customers {
+  padding: 40px;
+}
+
+.card-client-container {
+  display: flex;
+  width: 100%;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #333;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.client-card h3 {
+  color: #fff;
+  margin: 0px;
+  padding: 0px;
+}
+span {
+  color: #f8f8f8;
+  padding: 0px;
+  margin: 0px;
+}
+.avatar-text {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-left: 25px;
+}
+.parrafo-client {
+  color: #fff;
+  margin-top: 20px;
+}
+
+.parrafo-client p {
+  color: #fff;
+  margin: 0px;
+  padding: 0px;
+}
+.title-customers {
+  color: #333 !important;
+
+}
+.subtitle-customers {
+  font-size: 1.2rem !important;
+  color: #e67e22 !important;
+  font-family: Verdana, Geneva, sans-serif !important;
+}

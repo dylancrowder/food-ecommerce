@@ -1,44 +1,49 @@
-import { useEffect, useState, useRef } from "react";
+import PropTypes from "prop-types";
 import axios from "axios";
+import "../../css/card.css";
+export default function CardProduct({ products }) {
+  axios.defaults.withCredentials = true; // Configura axios para enviar cookies en todas las solicitudes
 
-export default function CardProduct() {
-  const [productsC, setProducts] = useState([]);
-  const fetchedRef = useRef(false);
+  const handleBuy = async (productID) => {
+    console.log(productID);
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/cart/create",
+        { productID }, // Pasa el productID como parte del cuerpo de la solicitud
+        {
+          withCredentials: true, // Incluir cookies en la solicitud
+        }
+      );
 
-  useEffect(() => {
-    if (!fetchedRef.current) {
-      fetchProduct();
-      fetchedRef.current = true;
+      console.log(response.data); // Acceder a los datos de la respuesta, si es necesario
+    } catch (error) {
+      console.error("Error al comprar:", error);
     }
-  }, []);
-
-  const fetchProduct = () => {
-    axios
-      .get("http://localhost:8080/api/getFour")
-      .then((response) => {
-        console.log(response.data);
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-      });
   };
 
   return (
     <>
       <div className="container-img-service container-cards-menus">
-        {productsC.map((cards, key) => (
-          <article key={key} className="servicio-img-container card-container">
+        {products.map((card) => (
+          <article
+            key={card.id}
+            className="servicio-img-container card-container"
+            onClick={() => handleBuy(card._id)}
+          >
             <div className="card">
               <div className="food-img-container">
-                <img className="food-img" src={cards.img} alt={cards.title} />
+                <img className="food-img" src={card.img} alt={card.title} />
               </div>
-
               <div className="card-footer">
                 <div className="text-card">
-                  <h4>{cards.title}</h4>
-                  <p>{cards.parrafo}</p>
-                  <p className="price">${cards.price}</p>
+                  <h4 className="cart-title">{card.title}</h4>
+                  <p className="cart-parraf">{card.parrafo}</p>
+                  <p className="price">${card.price}</p>
+                </div>
+                <div className="button-container">
+                  <button className="button-card-compra">
+                    Agregar al carrito
+                  </button>
                 </div>
               </div>
             </div>
@@ -48,3 +53,15 @@ export default function CardProduct() {
     </>
   );
 }
+
+CardProduct.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      img: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      parrafo: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
