@@ -194,3 +194,20 @@
 .overlay.show {
   display: block;
 }
+
+@media (max-width: 600px) {
+  .cart-side {
+    z-index: 3 !important;
+    position: fixed;
+    top: 0;
+    right: -710px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    box-sizing: border-box;
+    overflow: auto;
+    overflow-y: auto;
+  }
+}

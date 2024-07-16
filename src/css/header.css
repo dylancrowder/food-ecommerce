@@ -90,36 +90,88 @@
 }
 
 @media (max-width: 600px) {
-  .links-h {
-    width: 85%;
-  }
-  .nav-container {
-    font-size: 1.1rem;
-    margin: 0px;
-    width: 100%;
-    padding-inline: 20px;
-  }
-  .container-principal {
-    max-width: 100vw;
-    display: block;
-    overflow: hidden;
-  }
-  .main-container {
-    display: block;
-    overflow: hidden;
-  }
   .header-container {
-    height: 98vh;
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     background-color: #dbd805;
+    position: relative;
   }
 
-  .parraf-nav {
-    margin: 0px;
+  .custom-shape-divider-bottom-1720114021 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .custom-shape-divider-bottom-1720114021 svg {
+    position: relative;
+    display: block;
+    width: calc(380%);
+    height: 100px;
+    transform: rotateY(180deg);
+  }
+
+  .custom-shape-divider-bottom-1720114021 .shape-fill {
+    fill: #e67e22;
+  }
+
+  .container-header {
+    z-index: 2;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1300px;
+    width: 100%;
+  }
+
+  .container-text-header {
+    flex: 1;
+    padding: 0px;
+    text-align: center;
+
+  }
+
+  /* titulo header */
+  .title-header-text {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 2.6rem !important;
+    color: #181818;
+    margin-bottom: 10px;
+    line-height: 3rem !important;
+  }
+
+  /* parrafo  header*/
+  .p-header-paragraph {
+    text-align: start !important;
+  }
+  .container-img-header {
     padding: 0px;
   }
-  .link-a {
+  .img-header {
+    max-width: 100%;
+    filter: contrast(0.9);
   }
-  .icon-nav {
-    font-size: 1rem;
+
+  .button-header {
+    padding: 12px 62px;
+    font-size: 1.2rem;
+    color: rgb(253, 252, 252);
+    border: none;
+    background-color: #188132;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid black;
+  }
+
+  .button-header:hover {
+    background-color: #e67e22;
   }
 }
