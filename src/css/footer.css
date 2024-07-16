@@ -2,7 +2,6 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   background-color: #333;
   color: #fff;
   text-align: center;
@@ -55,13 +54,13 @@ footer p {
   footer {
     display: flex;
     flex-direction: column;
+
     height: auto;
-    margin-top: 0px;
+    margin: 0px;
     padding: 0px;
   }
   .footer-container {
-    height: 100vh;
-    border: 1px solid black;
+    height: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
