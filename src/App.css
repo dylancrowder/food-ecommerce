@@ -17,7 +17,6 @@ body {
 }
 
 @media (max-width: 600px) {
-
   .main-container {
     display: block;
     overflow: hidden;
@@ -35,7 +34,7 @@ body {
   }
 
   .container-text-header h1 {
-    font-size: 2rem; 
+    font-size: 2rem;
     margin-top: 0px;
   }
   .container-img-header {
@@ -45,8 +44,8 @@ body {
 
   .img-header {
     width: 100%;
-    object-fit: contain; 
-    max-width: 100%; 
+    object-fit: contain;
+    max-width: 100%;
   }
 
   .images-services {
@@ -60,8 +59,6 @@ body {
   .container-img-service {
     flex-direction: column;
   }
-
- 
 
   .container-customers {
     display: flex;
@@ -163,12 +160,5 @@ body {
     padding: 0px;
   }
 
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    height: auto;
-    margin-top: 80px;
-    padding: 40px;
-  }
+
 }

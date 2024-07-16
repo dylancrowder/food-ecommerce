@@ -3,6 +3,7 @@
   padding-block: 0px;
   overflow: hidden;
   background-color: #dbd805;
+  padding-bottom: 60px;
 
 }
 
@@ -104,4 +105,8 @@ span {
   font-size: 1.2rem !important;
   color: #e67e22 !important;
   font-family: Verdana, Geneva, sans-serif !important;
+}
+
+@media (max-width: 600px) {
+
 }

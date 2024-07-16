@@ -50,3 +50,17 @@ footer {
 footer p {
   margin: 10px 0 0;
 }
+
+@media (max-width: 600px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 0px;
+    padding: 0px;
+  }
+  .footer-container {
+    height: 100vh;
+    border: 1px solid black;
+  }
+}

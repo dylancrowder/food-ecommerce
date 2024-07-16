@@ -66,3 +66,18 @@
 .btn-order {
   width: 182px;
 }
+
+@media (max-width: 600px) {
+  .container-cards-menus {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  .highlighted-container::before {
+    background-color: #dbd805;
+  }
+}
