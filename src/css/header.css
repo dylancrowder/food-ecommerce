@@ -20,8 +20,6 @@
 .custom-shape-divider-bottom-1720114021 svg {
   position: relative;
   display: block;
-  width: calc(150%);
-  height: 200px;
   transform: rotateY(180deg);
 }
 
@@ -55,19 +53,21 @@
   line-height: 5rem;
 }
 
-/* parrafo  header*/
+/* parrafo  header */
 .p-header-paragraph {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 1.1rem;
   color: #666666;
   margin-bottom: 30px;
 }
+
 .container-img-header {
   flex: 1;
   display: flex;
   justify-content: center;
   padding: 20px;
 }
+
 .img-header {
   max-width: 100%;
   filter: contrast(0.9);
@@ -91,85 +91,46 @@
 
 @media (max-width: 600px) {
   .header-container {
-    display: flex;
     height: 100vh;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #dbd805;
-    position: relative;
-  }
-
-  .custom-shape-divider-bottom-1720114021 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
   }
 
   .custom-shape-divider-bottom-1720114021 svg {
-    position: relative;
-    display: block;
     width: calc(380%);
     height: 100px;
-    transform: rotateY(180deg);
-  }
-
-  .custom-shape-divider-bottom-1720114021 .shape-fill {
-    fill: #e67e22;
   }
 
   .container-header {
-    z-index: 2;
     height: 90vh;
-    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 1300px;
-    width: 100%;
   }
 
   .container-text-header {
-    flex: 1;
     padding: 0px;
     text-align: center;
   }
 
   /* titulo header */
   .title-header-text {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 2.3rem !important;
-    color: #181818;
     margin-bottom: 0px;
     line-height: 3rem !important;
   }
 
-  /* parrafo  header*/
+  /* parrafo  header */
   .p-header-paragraph {
     text-align: start !important;
   }
+
   .container-img-header {
     padding: 0px;
   }
+
   .img-header {
     max-width: 90% !important;
-  }
-
-  .button-header {
-    padding: 12px 62px;
-    font-size: 1.2rem;
-    color: rgb(253, 252, 252);
-    border: none;
-    background-color: #188132;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: 1px solid black;
-  }
-
-  .button-header:hover {
-    background-color: #e67e22;
   }
 }
