@@ -61,6 +61,7 @@ footer p {
   }
   .footer-container {
     height: auto;
+    padding-block: 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
