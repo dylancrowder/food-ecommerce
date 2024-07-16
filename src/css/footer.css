@@ -18,7 +18,7 @@ footer {
 .footer-column {
   flex: 1;
   min-width: 200px;
-  margin: 10px;
+  margin: 0px;
 }
 
 .footer-column h3 {
@@ -62,5 +62,13 @@ footer p {
   .footer-container {
     height: 100vh;
     border: 1px solid black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-column {
+    flex: 0;
+    min-width: 200px;
+    margin: 0px;
   }
 }
