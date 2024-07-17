@@ -1,5 +1,5 @@
- import "../../css/footer.css"
- export function Footer() {
+import "../../css/footer.css";
+export function Footer() {
   return (
     <>
       <footer>
@@ -59,7 +59,9 @@
             </ul>
           </div>
         </div>
-        <p>&copy; 2024 Dylan Crowder. Todos los derechos reservados.</p>
+        <p className="copy">
+          &copy; 2024 Dylan Crowder. Todos los derechos reservados.
+        </p>
       </footer>
     </>
   );

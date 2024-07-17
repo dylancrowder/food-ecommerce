@@ -6,8 +6,9 @@ import CardProduct from "../generalComponents/CardProduct";
 import "./product.css";
 import NavBar from "../generalComponents/NavBar";
 import useFetchProducts from "../../hooks/Hooks";
-
 import "aos/dist/aos.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDownWideShort } from "@fortawesome/free-solid-svg-icons";
 
 const Product = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -27,6 +28,10 @@ const Product = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+  };
+
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
   };
 
   return (
@@ -63,7 +68,8 @@ const Product = () => {
 
         <div className="cnt">
           <div className="filter-title-container">
-            <h2 className="filter-title">Categories</h2>
+            <h2 className="filter-title">Filter</h2>
+            <FontAwesomeIcon className="icono" icon={faArrowDownWideShort} />
           </div>
 
           <div className="filter-category">
@@ -98,6 +104,16 @@ const Product = () => {
               {"Ensaladas"}
             </button>
           </div>
+          <div className="mobile-filter">
+            <select className="select" value={selectedCategory} onChange={handleCategoryChange}>
+              <option value="All">All</option>
+              <option value="Pastas">Pastas</option>
+              <option value="Hamburguesa">Hamburguesa</option>
+              <option value="Pizza">Pizza</option>
+              <option value="Ensaladas">Ensaladas</option>
+            </select>
+          </div>
+
           <div className="card-container-product">
             <div data-aos="fade-left">
               <CardProduct products={products} />
