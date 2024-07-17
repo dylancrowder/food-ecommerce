@@ -29,6 +29,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
       setCartItems((prevItems) =>
         prevItems.filter((item) => item.product._id !== id)
       );
+      console.log(response);
     } catch (error) {
       console.error("Error deleting item:", error);
     }
@@ -50,6 +51,8 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
             : item
         )
       );
+
+      console.log(response);
     } catch (error) {
       console.error("Error incrementing item quantity:", error);
     }
@@ -72,6 +75,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
           )
           .filter((item) => item.quantity > 0)
       );
+      console.log(response);
     } catch (error) {
       console.error("Error decrementing item quantity:", error);
     }

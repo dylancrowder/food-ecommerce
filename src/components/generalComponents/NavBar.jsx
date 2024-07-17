@@ -13,7 +13,7 @@ export default function NavBar() {
   const [cart, setCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const handleCart = async () => {
-    const response = await axios.get("http://localhost:8080/api/cart/find", {
+    const response = await axios.get("https://backend-food-repo.vercel.app/api/cart/find", {
       withCredentials: true,
     });
     setCart((cart) => !cart);
