@@ -21,7 +21,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleDeleteItem = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/cart/delete/${id}`,
+        `https://backend-food-repo.vercel.app//api/cart/delete/${id}`,
         {
           withCredentials: true,
         }
@@ -37,7 +37,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleIncrementItem = async (id) => {
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/cart/increment/${id}`,
+        `https://backend-food-repo.vercel.app/api/cart/increment/${id}`,
         {},
         {
           withCredentials: true,
@@ -58,7 +58,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleDecrementItem = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/cart/decrement/${id}`,
+        `https://backend-food-repo.vercel.app/api/cart/decrement/${id}`,
         {
           withCredentials: true,
         }
@@ -84,7 +84,10 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
 
   return (
     <>
-      <div className={`overlay ${cart ? "show" : ""}`} onClick={handleCart}></div>
+      <div
+        className={`overlay ${cart ? "show" : ""}`}
+        onClick={handleCart}
+      ></div>
       <div className={`cart-side ${cart ? "open" : ""}`}>
         <div className="nav-cart">
           <button className="close-btn" onClick={handleCart}>
