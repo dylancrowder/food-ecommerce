@@ -80,4 +80,8 @@
   .highlighted-container::before {
     background-color: #dbd805;
   }
+
+  .highlighted-container {
+    margin: 0px;
+  }
 }

@@ -129,3 +129,22 @@
   background-color: #08531b;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container-img-service {
+    gap: 0px;
+  }
+
+  .card {
+    width: 345px;
+  }
+
+  .card-footer {
+    width: 94%;
+  }
+
+  .food-img-container {
+    width: 345px;
+    height: 330px;
+  }
+}
