@@ -3,12 +3,12 @@ import axios from "axios";
 import "../../css/card.css";
 export default function CardProduct({ products }) {
   axios.defaults.withCredentials = true; // Configura axios para enviar cookies en todas las solicitudes
-
+  axios.defaults.headers.common["Content-Type"] = "application/json";
   const handleBuy = async (productID) => {
     console.log(productID);
     try {
       const response = await axios.post(
-        "https://backend-food-repo.vercel.app/api/cart/create",
+        "https://backend-food-repo.vercel.app/cart/create",
         { productID }, // Pasa el productID como parte del cuerpo de la solicitud
         {
           withCredentials: true, // Incluir cookies en la solicitud

@@ -9,13 +9,19 @@ import {
 import axios from "axios";
 import "../../css/navBar.css";
 import { CartShopping } from "./CartShopping";
+
 export default function NavBar() {
   const [cart, setCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+
   const handleCart = async () => {
-    const response = await axios.get("https://backend-food-repo.vercel.app/api/cart/find", {
-      withCredentials: true,
-    });
+    console.log();
+    const response = await axios.get(
+      "https://backend-food-repo.vercel.app/cart/find",
+      {
+        withCredentials: true,
+      }
+    );
     setCart((cart) => !cart);
     setCartItems(response.data.items);
   };
