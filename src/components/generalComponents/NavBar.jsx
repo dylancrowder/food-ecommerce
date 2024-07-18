@@ -17,7 +17,7 @@ export default function NavBar() {
   const handleCart = async () => {
     console.log();
     const response = await axios.get(
-      "https://backend-food-repo.vercel.app/cart/find",
+      "https://backend-food-repo.vercel.app/api/cart/find",
       {
         withCredentials: true,
       }
