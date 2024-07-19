@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const local = "http://localhost:8080";
-  const online = "https://backendfood.vercel.app";
+  const online = "https://backend-dun-six-41.vercel.app";
   useEffect(() => {
     if (cart) {
       document.body.style.overflow = "hidden";
