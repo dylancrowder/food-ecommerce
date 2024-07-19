@@ -11,9 +11,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownWideShort } from "@fortawesome/free-solid-svg-icons";
 
 const Product = () => {
+  const local = "http://localhost:8080";
+  const online = "https://backendfood.vercel.app";
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { products } = useFetchProducts(
-    `http://localhost:8080/api/category/${selectedCategory}`
+    `${online}/api/category/${selectedCategory}`
   );
 
   useEffect(() => {
@@ -105,7 +107,11 @@ const Product = () => {
             </button>
           </div>
           <div className="mobile-filter">
-            <select className="select" value={selectedCategory} onChange={handleCategoryChange}>
+            <select
+              className="select"
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+            >
               <option value="All">All</option>
               <option value="Pastas">Pastas</option>
               <option value="Hamburguesa">Hamburguesa</option>
