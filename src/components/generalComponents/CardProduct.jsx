@@ -10,7 +10,7 @@ export default function CardProduct({ products }) {
     console.log(productID);
     try {
       const response = await axios.post(
-        "https://bknd-seven.vercel.app/api/cart/create",
+        "https://backendfood.vercel.app/api/cart/create",
         { productID }, // Pasa el productID como parte del cuerpo de la solicitud
         {
           withCredentials: true, // Incluir cookies en la solicitud

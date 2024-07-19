@@ -21,7 +21,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleDeleteItem = async (id) => {
     try {
       const response = await axios.delete(
-        `https://bknd-seven.vercel.app/api/cart/delete/${id}`,
+        `https://backendfood.vercel.app/api/cart/delete/${id}`,
         {
           withCredentials: true,
         }

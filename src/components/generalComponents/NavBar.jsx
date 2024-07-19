@@ -19,7 +19,7 @@ export default function NavBar() {
     axios.defaults.headers.common["Content-Type"] = "application/json";
 
     const response = await axios.get(
-      "https://bknd-seven.vercel.app/cart/find",
+      "https://backendfood.vercel.app/cart/find",
       {
         withCredentials: true,
       }
