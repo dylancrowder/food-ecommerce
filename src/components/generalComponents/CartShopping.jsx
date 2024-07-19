@@ -6,6 +6,8 @@ import "../../css/cartShopping.css";
 import { useEffect } from "react";
 
 export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
+  const local = "http://localhost:8080";
+  const online = "https://backendfood.vercel.app";
   useEffect(() => {
     if (cart) {
       document.body.style.overflow = "hidden";
@@ -21,7 +23,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleDeleteItem = async (id) => {
     try {
       const response = await axios.delete(
-        `https://backendfood.vercel.app/api/cart/delete/${id}`,
+        `${online}/api/cart/delete/${id}`,
         {
           withCredentials: true,
         }
@@ -38,7 +40,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleIncrementItem = async (id) => {
     try {
       const response = await axios.post(
-        `https://bknd-seven.vercel.app/api/cart/increment/${id}`,
+        `${online}/api/cart/increment/${id}`,
         {},
         {
           withCredentials: true,
@@ -61,7 +63,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleDecrementItem = async (id) => {
     try {
       const response = await axios.delete(
-        `https://backend-food-repo.vercel.app/api/cart/decrement/${id}`,
+        `${online}/api/cart/decrement/${id}`,
         {
           withCredentials: true,
         }

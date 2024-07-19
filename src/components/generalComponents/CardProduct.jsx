@@ -2,15 +2,18 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import "../../css/card.css";
 export default function CardProduct({ products }) {
+  const local = "http://localhost:8080";
+  const online = "https://backendfood.vercel.app";
   axios.defaults.withCredentials = true; // Configura axios para enviar cookies en todas las solicitudes
   axios.defaults.headers.common["Content-Type"] = "application/json";
   const handleBuy = async (productID) => {
-    axios.defaults.withCredentials = true; 
+    axios.defaults.withCredentials = true;
     axios.defaults.headers.common["Content-Type"] = "application/json";
     console.log(productID);
     try {
       const response = await axios.post(
-        "https://backendfood.vercel.app/api/cart/create",
+        `${online}/api/cart/create`,
+
         { productID }, // Pasa el productID como parte del cuerpo de la solicitud
         {
           withCredentials: true, // Incluir cookies en la solicitud

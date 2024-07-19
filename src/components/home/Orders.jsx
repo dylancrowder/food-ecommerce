@@ -4,9 +4,9 @@ import useFetchProducts from "../../hooks/Hooks";
 import "../../css/orders.css";
 
 export function Orders() {
-  const { products, loading, error } = useFetchProducts(
-    "https://backendfood.vercel.app/api/four"
-  );
+  const local = "http://localhost:8080";
+  const online = "https://backendfood.vercel.app";
+  const { products, loading, error } = useFetchProducts(`${online}/api/four`);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error fetching products: {error.message}</p>;
@@ -24,9 +24,10 @@ export function Orders() {
         </div>
         <div className="btt">
           <div className="highlighted-container">
-   
             <Link to="/products">
-              <button className="button-header service-button btn-order">Menus</button>
+              <button className="button-header service-button btn-order">
+                Menus
+              </button>
             </Link>
           </div>
         </div>

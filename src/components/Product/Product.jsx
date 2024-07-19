@@ -13,7 +13,7 @@ import { faArrowDownWideShort } from "@fortawesome/free-solid-svg-icons";
 const Product = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { products } = useFetchProducts(
-    `https://bknd-seven.vercel.app/api/category/${selectedCategory}`
+    `http://localhost:8080/api/category/${selectedCategory}`
   );
 
   useEffect(() => {
