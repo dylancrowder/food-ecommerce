@@ -5,7 +5,7 @@ import "../../css/orders.css";
 
 export function Orders() {
   const { products, loading, error } = useFetchProducts(
-    "https://backend-food-repo.vercel.app/api/four"
+    "https://bknd-seven.vercel.app/api/four"
   );
 
   if (loading) return <p>Loading...</p>;

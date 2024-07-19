@@ -21,7 +21,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleDeleteItem = async (id) => {
     try {
       const response = await axios.delete(
-        `https://backend-food-repo.vercel.app//api/cart/delete/${id}`,
+        `https://bknd-seven.vercel.app/api/cart/delete/${id}`,
         {
           withCredentials: true,
         }
@@ -38,7 +38,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleIncrementItem = async (id) => {
     try {
       const response = await axios.post(
-        `https://backend-food-repo.vercel.app/api/cart/increment/${id}`,
+        `https://bknd-seven.vercel.app/api/cart/increment/${id}`,
         {},
         {
           withCredentials: true,
