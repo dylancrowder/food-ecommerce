@@ -15,7 +15,7 @@ const Product = () => {
   const online = "https://backend-dun-six-41.vercel.app";
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { products } = useFetchProducts(
-    `${online}/api/category/${selectedCategory}`
+    `${local}/api/category/${selectedCategory}`
   );
 
   useEffect(() => {

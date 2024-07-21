@@ -21,7 +21,7 @@ export default function NavBar() {
     const local = "http://localhost:8080";
     const online = "https://backend-dun-six-41.vercel.app";
 
-    const response = await axios.get(`${online}/api/cart/find`, {
+    const response = await axios.get(`${local}/api/cart/find`, {
       withCredentials: true,
     });
     setCart((cart) => !cart);

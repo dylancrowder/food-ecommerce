@@ -23,7 +23,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleDeleteItem = async (id) => {
     try {
       const response = await axios.delete(
-        `${online}/api/cart/delete/${id}`,
+        `${local}/api/cart/delete/${id}`,
         {
           withCredentials: true,
         }
@@ -40,7 +40,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleIncrementItem = async (id) => {
     try {
       const response = await axios.post(
-        `${online}/api/cart/increment/${id}`,
+        `${local}/api/cart/increment/${id}`,
         {},
         {
           withCredentials: true,
@@ -63,7 +63,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const handleDecrementItem = async (id) => {
     try {
       const response = await axios.delete(
-        `${online}/api/cart/decrement/${id}`,
+        `${local}/api/cart/decrement/${id}`,
         {
           withCredentials: true,
         }

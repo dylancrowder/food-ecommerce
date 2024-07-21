@@ -12,7 +12,7 @@ export default function CardProduct({ products }) {
     console.log(productID);
     try {
       const response = await axios.post(
-        `${online}/api/cart/create`,
+        `${local}/api/cart/create`,
 
         { productID }, // Pasa el productID como parte del cuerpo de la solicitud
         {
