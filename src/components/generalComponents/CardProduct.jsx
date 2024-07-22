@@ -3,7 +3,7 @@ import axios from "axios";
 import "../../css/card.css";
 export default function CardProduct({ products }) {
   const local = "http://localhost:8080";
-  const online = "https://backend-dun-six-41.vercel.app";
+  const online = "https://backendfood.vercel.app";
 
   const handleBuy = async (productID) => {
     console.log(productID);
