@@ -4,11 +4,8 @@ import "../../css/card.css";
 export default function CardProduct({ products }) {
   const local = "http://localhost:8080";
   const online = "https://backend-dun-six-41.vercel.app";
-  axios.defaults.withCredentials = true; // Configura axios para enviar cookies en todas las solicitudes
-  axios.defaults.headers.common["Content-Type"] = "application/json";
+
   const handleBuy = async (productID) => {
-    axios.defaults.withCredentials = true;
-    axios.defaults.headers.common["Content-Type"] = "application/json";
     console.log(productID);
     try {
       const response = await axios.post(
