@@ -14,18 +14,21 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import axios from "axios";
+
 export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 1500,
     });
   }, []);
+
   const fetchToken = async () => {
     try {
-      // Realiza una petición para obtener el token y guardarlo en localStorage
       const response = await axios.get("https://backendfood.vercel.app/token");
       localStorage.setItem("token", response.data.token);
       console.log(response);
+
+      window.location.reload();
     } catch (error) {
       console.error("Error fetching token", error);
     }
@@ -37,15 +40,14 @@ export default function Home() {
       fetchToken();
     }
   }, []);
+
   return (
     <>
       <div className="container-principal">
         <Header img={img} />
         <main className="main-container">
           <Prestation order={order} delivery={delivery} courier={courier} />
-
           <Orders />
-
           <Customers
             foodCustomer2={foodCustomer2}
             foodCustomer3={foodCustomer3}
