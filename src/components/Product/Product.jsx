@@ -15,7 +15,7 @@ const Product = () => {
   const online = "https://backendfood.vercel.app";
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { products } = useFetchProducts(
-    `${local}/api/category/${selectedCategory}`
+    `${online}/api/category/${selectedCategory}`
   );
 
   useEffect(() => {
