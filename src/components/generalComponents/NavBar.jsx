@@ -15,13 +15,15 @@ export default function NavBar() {
   const [cartItems, setCartItems] = useState([]);
 
   const handleCart = async () => {
+    const token = localStorage.getItem("token");
     axios.defaults.withCredentials = true;
     axios.defaults.headers.common["Content-Type"] = "application/json";
 
     const local = "http://localhost:8080";
     const online = "https://backendfood.vercel.app";
 
-    const response = await axios.get(`${online}/api/cart/find`, {
+    const response = await axios.get(`${local}/api/cart/find`, {
+      headers: { Authorization: `Bearer ${token}` },
       withCredentials: true,
     });
     setCart((cart) => !cart);

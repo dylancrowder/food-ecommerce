@@ -6,6 +6,9 @@ export default function CardProduct({ products }) {
   const online = "https://backendfood.vercel.app";
 
   const handleBuy = async (productID) => {
+    const token = localStorage.getItem("token");
+    axios.defaults.withCredentials = true;
+    axios.defaults.headers.common["Content-Type"] = "application/json";
     console.log(productID);
     try {
       const response = await axios.post(
@@ -13,6 +16,7 @@ export default function CardProduct({ products }) {
 
         { productID }, // Pasa el productID como parte del cuerpo de la solicitud
         {
+          headers: { Authorization: `Bearer ${token}` },
           withCredentials: true, // Incluir cookies en la solicitud
         }
       );
