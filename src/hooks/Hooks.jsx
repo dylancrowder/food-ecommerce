@@ -7,7 +7,6 @@ const useFetchProducts = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.defaults.headers.common["Content-Type"] = "application/json";
     const token = localStorage.getItem("token");
     const fetchProducts = async () => {
       console.log(url);
