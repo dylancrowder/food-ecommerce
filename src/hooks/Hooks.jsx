@@ -7,6 +7,7 @@ const useFetchProducts = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+   
     const token = localStorage.getItem("token");
     const fetchProducts = async () => {
       console.log(url);
