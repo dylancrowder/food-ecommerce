@@ -13,14 +13,32 @@ import img from "../../img/comida.png";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
-
+import axios from "axios";
 export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 1500,
     });
   }, []);
+  const fetchToken = async () => {
+    try {
+      // Realiza una petición para obtener el token y guardarlo en localStorage
+      const response = await axios.get("https://backendfood.vercel.app/token", {
+        withCredentials: true,
+      });
+      localStorage.setItem("token", response.data.token);
+      console.log(response);
+    } catch (error) {
+      console.error("Error fetching token", error);
+    }
+  };
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      fetchToken();
+    }
+  }, []);
   return (
     <>
       <div className="container-principal">
