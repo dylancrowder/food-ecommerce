@@ -15,6 +15,7 @@ export default function NavBar() {
   const [cartItems, setCartItems] = useState([]);
 
   const handleCart = async () => {
+    const token = localStorage.getItem("token");
     axios.defaults.withCredentials = true;
     axios.defaults.headers.common["Content-Type"] = "application/json";
 
@@ -22,6 +23,7 @@ export default function NavBar() {
     const online = "https://backend-dun-six-41.vercel.app";
 
     const response = await axios.get(`${local}/api/cart/find`, {
+      headers: { Authorization: `Bearer ${token}` },
       withCredentials: true,
     });
     setCart((cart) => !cart);

@@ -7,6 +7,7 @@ export default function CardProduct({ products }) {
   axios.defaults.withCredentials = true; // Configura axios para enviar cookies en todas las solicitudes
   axios.defaults.headers.common["Content-Type"] = "application/json";
   const handleBuy = async (productID) => {
+    const token = localStorage.getItem("token");
     axios.defaults.withCredentials = true;
     axios.defaults.headers.common["Content-Type"] = "application/json";
     console.log(productID);
@@ -16,6 +17,7 @@ export default function CardProduct({ products }) {
 
         { productID }, // Pasa el productID como parte del cuerpo de la solicitud
         {
+          headers: { Authorization: `Bearer ${token}` },
           withCredentials: true, // Incluir cookies en la solicitud
         }
       );

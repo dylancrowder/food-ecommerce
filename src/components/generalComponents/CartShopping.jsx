@@ -8,6 +8,7 @@ import { useEffect } from "react";
 export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const local = "http://localhost:8080";
   const online = "https://backend-dun-six-41.vercel.app";
+  const token = localStorage.getItem("token");
   useEffect(() => {
     if (cart) {
       document.body.style.overflow = "hidden";
@@ -24,9 +25,8 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
     try {
       const response = await axios.delete(
         `${local}/api/cart/delete/${id}`,
-        {
-          withCredentials: true,
-        }
+
+        { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       );
       setCartItems((prevItems) =>
         prevItems.filter((item) => item.product._id !== id)
@@ -42,9 +42,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
       const response = await axios.post(
         `${local}/api/cart/increment/${id}`,
         {},
-        {
-          withCredentials: true,
-        }
+        { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       );
       setCartItems((prevItems) =>
         prevItems.map((item) =>
@@ -62,12 +60,10 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
 
   const handleDecrementItem = async (id) => {
     try {
-      const response = await axios.delete(
-        `${local}/api/cart/decrement/${id}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.delete(`${local}/api/cart/decrement/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+        withCredentials: true,
+      });
       setCartItems((prevItems) =>
         prevItems
           .map((item) =>

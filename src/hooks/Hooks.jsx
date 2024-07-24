@@ -7,12 +7,16 @@ const useFetchProducts = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    axios.defaults.headers.common["Content-Type"] = "application/json";
+    const token = localStorage.getItem("token");
     const fetchProducts = async () => {
       console.log(url);
       try {
         const response = await axios.get(url, {
+          headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
         });
+        console.log("esta es la respuesta del servidor", response.data);
         setProducts(response.data);
       } catch (err) {
         setError(err);
