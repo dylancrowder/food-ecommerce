@@ -9,7 +9,7 @@ export function Orders() {
   const { products, loading, error } = useFetchProducts(`${online}/api/four`);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error fetching products: {error.message}</p>;
+  if (error) return <p>Error fetching productss: {error.message}</p>;
 
   return (
     <>
