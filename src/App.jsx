@@ -10,7 +10,7 @@ function App() {
   const fetchToken = async () => {
     try {
       // Realiza una petición para obtener el token y guardarlo en localStorage
-      const response = await axios.get("https://backendfood.vercel.app/", {
+      const response = await axios.get("https://backendfood.vercel.app/token", {
         withCredentials: true,
       });
       localStorage.setItem("token", response.data.token);
