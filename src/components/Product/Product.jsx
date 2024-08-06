@@ -38,7 +38,7 @@ const Product = () => {
 
     try {
       const response = await axios.get(
-        `${local}/api/category/${selectedCategory}`,
+        `${online}/api/category/${selectedCategory}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
