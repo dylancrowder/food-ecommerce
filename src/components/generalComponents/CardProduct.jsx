@@ -17,7 +17,7 @@ export default function CardProduct({ products }) {
 
     try {
       const response = await axios.post(
-        `${local}/api/cart/create`,
+        `${online}/api/cart/create`,
         { productID },
         {
           headers: { Authorization: `Bearer ${token}` },

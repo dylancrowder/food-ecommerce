@@ -22,7 +22,7 @@ export default function NavBar() {
     const local = "http://localhost:8080";
     const online = "https://backendfood.vercel.app";
 
-    const response = await axios.get(`${local}/api/cart/find`, {
+    const response = await axios.get(`${online}/api/cart/find`, {
       headers: { Authorization: `Bearer ${token}` },
       withCredentials: true,
     });

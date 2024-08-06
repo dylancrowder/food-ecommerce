@@ -28,7 +28,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
     );
     try {
       const response = await axios.delete(
-        `${local}/api/cart/delete/${id}`,
+        `${online}/api/cart/delete/${id}`,
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       );
       console.log(response);
@@ -47,7 +47,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
     );
     try {
       const response = await axios.post(
-        `${local}/api/cart/increment/${id}`,
+        `${online}/api/cart/increment/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       );
@@ -68,7 +68,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
         .filter((item) => item.quantity > 0)
     );
     try {
-      const response = await axios.delete(`${local}/api/cart/decrement/${id}`, {
+      const response = await axios.delete(`${online}/api/cart/decrement/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
