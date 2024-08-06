@@ -24,7 +24,7 @@ export default function Home() {
 
   const fetchToken = async () => {
     try {
-      const response = await axios.get("https://backendfood.vercel.app/token");
+      const response = await axios.get("http://localhost:8080/token");
       localStorage.setItem("token", response.data.token);
       console.log(response);
 

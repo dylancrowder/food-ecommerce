@@ -6,9 +6,10 @@ import "../../css/cartShopping.css";
 import { useEffect } from "react";
 
 export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
-  const local = "http://onlinehost:8080";
+  const local = "http://localhost:8080";
   const online = "https://backendfood.vercel.app";
   const token = localStorage.getItem("token");
+
   useEffect(() => {
     if (cart) {
       document.body.style.overflow = "hidden";
@@ -22,14 +23,13 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   };
 
   const handleDeleteItem = async (id) => {
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.product._id !== id)
+    );
     try {
       const response = await axios.delete(
-        `${online}/api/cart/delete/${id}`,
-
+        `${local}/api/cart/delete/${id}`,
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
-      );
-      setCartItems((prevItems) =>
-        prevItems.filter((item) => item.product._id !== id)
       );
       console.log(response);
     } catch (error) {
@@ -38,20 +38,19 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   };
 
   const handleIncrementItem = async (id) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.product._id === id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
     try {
       const response = await axios.post(
-        `${online}/api/cart/increment/${id}`,
+        `${local}/api/cart/increment/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       );
-      setCartItems((prevItems) =>
-        prevItems.map((item) =>
-          item.product._id === id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
-      );
-
       console.log(response);
     } catch (error) {
       console.error("Error incrementing item quantity:", error);
@@ -59,23 +58,20 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   };
 
   const handleDecrementItem = async (id) => {
+    setCartItems((prevItems) =>
+      prevItems
+        .map((item) =>
+          item.product._id === id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
     try {
-      const response = await axios.delete(
-        `${online}/api/cart/decrement/${id}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-          withCredentials: true,
-        }
-      );
-      setCartItems((prevItems) =>
-        prevItems
-          .map((item) =>
-            item.product._id === id
-              ? { ...item, quantity: item.quantity - 1 }
-              : item
-          )
-          .filter((item) => item.quantity > 0)
-      );
+      const response = await axios.delete(`${local}/api/cart/decrement/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+        withCredentials: true,
+      });
       console.log(response);
     } catch (error) {
       console.error("Error decrementing item quantity:", error);
@@ -116,6 +112,9 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
                 <div className="cont-parraf">
                   <p className="parraf-cart">{item.product.parrafo}</p>
                 </div>
+                <div className="price-container-mobile">
+                  <p className="p-price">${item.product.price}</p>
+                </div>
               </div>
               <div className="info-cart">
                 <button
@@ -124,8 +123,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
                 >
                   -
                 </button>
-                <p>{item.quantity}</p>
-
+                <p className="item-quantity">{item.quantity}</p>
                 <button
                   className="btn-quantity"
                   onClick={() => handleIncrementItem(item.product._id)}
@@ -150,7 +148,6 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
             <h4>Total:</h4>
             <h4>${total.toFixed(2)}</h4>
           </div>
-
           <button onClick={handleBuy} className="buy-btn">
             Comprar
           </button>

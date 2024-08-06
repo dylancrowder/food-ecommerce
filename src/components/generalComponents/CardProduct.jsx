@@ -1,6 +1,11 @@
+import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import ReactDOM from "react-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../../css/card.css";
+
 export default function CardProduct({ products }) {
   const local = "http://localhost:8080";
   const online = "https://backendfood.vercel.app";
@@ -9,30 +14,54 @@ export default function CardProduct({ products }) {
     const token = localStorage.getItem("token");
     axios.defaults.withCredentials = true;
     axios.defaults.headers.common["Content-Type"] = "application/json";
-    console.log(productID);
+
     try {
       const response = await axios.post(
-        `${online}/api/cart/create`,
-
-        { productID }, // Pasa el productID como parte del cuerpo de la solicitud
+        `${local}/api/cart/create`,
+        { productID },
         {
           headers: { Authorization: `Bearer ${token}` },
-          withCredentials: true, // Incluir cookies en la solicitud
+          withCredentials: true,
         }
       );
 
-      console.log(response.data); // Acceder a los datos de la respuesta, si es necesario
+      toast.success("Product added successfully", {
+        autoClose: 1800,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        className: "custom-toast",
+      });
     } catch (error) {
-      console.error("Error al comprar:", error);
+      const errorMessage = error.message;
+
+      toast.error( errorMessage, {
+        autoClose: 1800,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        className: "custom-toast",
+      });
     }
   };
 
   return (
     <>
+      {ReactDOM.createPortal(
+        <ToastContainer />,
+        document.getElementById("toast-root")
+      )}
+
       <div className="container-img-service container-cards-menus">
         {products.map((card) => (
           <article
-            key={card.id}
+            key={card._id}
             className="servicio-img-container card-container"
             onClick={() => handleBuy(card._id)}
           >
@@ -63,7 +92,7 @@ export default function CardProduct({ products }) {
 CardProduct.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      _id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       img: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       parrafo: PropTypes.string.isRequired,

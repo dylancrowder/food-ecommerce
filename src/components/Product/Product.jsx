@@ -1,26 +1,72 @@
+import "./product.css";
 import { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import CardProduct from "../generalComponents/CardProduct";
-import "./product.css";
-import NavBar from "../generalComponents/NavBar";
-import useFetchProducts from "../../hooks/Hooks";
 import "aos/dist/aos.css";
+import axios from "axios";
+import AOS from "aos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownWideShort } from "@fortawesome/free-solid-svg-icons";
+
+import CardProduct from "../generalComponents/CardProduct";
+import NavBar from "../generalComponents/NavBar";
+import Animations from "../utilitys/Loader";
+import { Error } from "../utilitys/Error";
 
 const Product = () => {
   const local = "http://localhost:8080";
   const online = "https://backendfood.vercel.app";
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const { products } = useFetchProducts(
-    `${online}/api/category/${selectedCategory}`
-  );
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchCategory = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      try {
+        const response = await axios.get("http://localhost:8080/token");
+        localStorage.setItem("token", response.data.token);
+        console.log(response);
+
+        window.location.reload();
+      } catch (error) {
+        console.error("Error fetching token", error);
+      }
+    }
+
+    try {
+      const response = await axios.get(
+        `${local}/api/category/${selectedCategory}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        }
+      );
+
+      setProducts(response.data);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+    });
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchCategory();
   }, []);
+
+  useEffect(() => {
+    fetchCategory();
+  }, [selectedCategory]);
 
   const settings = {
     dots: true,
@@ -121,9 +167,15 @@ const Product = () => {
           </div>
 
           <div className="card-container-product">
-            <div data-aos="fade-left">
-              <CardProduct products={products} />
-            </div>
+            {loading ? (
+              <Animations />
+            ) : error ? (
+              <Error message={error.message} />
+            ) : (
+              <div data-aos="fade-left">
+                <CardProduct products={products} />
+              </div>
+            )}
           </div>
         </div>
       </div>

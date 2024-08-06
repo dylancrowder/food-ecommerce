@@ -151,7 +151,7 @@
   text-align: start;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* Número de líneas a mostrar */
+  line-clamp: 2; /* Número de líneas a mostrar */
   overflow: hidden;
   text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto truncado */
 }
@@ -194,6 +194,9 @@
 .overlay.show {
   display: block;
 }
+.price-container-mobile {
+  display: none;
+}
 
 @media (max-width: 600px) {
   .cart-side {
@@ -209,5 +212,77 @@
     box-sizing: border-box;
     overflow: auto;
     overflow-y: auto;
+  }
+  .title-product-cont {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+  }
+  .title-cart-product {
+    font-size: 1rem;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .price-container-mobile {
+    display: block;
+  }
+  .price-container {
+    display: none;
+  }
+  .p-price {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .parraf-cart {
+    font-size: 1rem !important;
+    color: #666;
+    margin: 8px 0px;
+    padding: 0px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 150px;
+    text-align: start;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Asegúrate de usar el prefijo -webkit para line-clamp */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto truncado */
+  }
+  .cont-parraf {
+    width: 130px;
+  }
+
+  .info-cart {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    font-weight: bolder;
+  }
+
+  .info-cart button {
+    margin-inline: 15px;
+  }
+  .item-quantity {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  .btn-quantity {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  .info-cart-container {
+    display: flex;
+
+    border-bottom: 3px solid rgba(143, 143, 143, 0.705);
+    padding-block: 20px;
+    width: 100%;
+    margin-inline: 10px;
   }
 }
