@@ -16,6 +16,7 @@ import AOS from "aos";
 import axios from "axios";
 
 export default function Home() {
+  const env = import.meta.env.VITE_API_URL;
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -24,7 +25,7 @@ export default function Home() {
 
   const fetchToken = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/token");
+      const response = await axios.get(env);
       localStorage.setItem("token", response.data.token);
       console.log(response);
 

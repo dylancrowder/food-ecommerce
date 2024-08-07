@@ -27,7 +27,7 @@ const Product = () => {
 
     if (!token) {
       try {
-        const response = await axios.get("http://localhost:8080/token");
+        const response = await axios.get(env);
         localStorage.setItem("token", response.data.token);
         window.location.reload();
       } catch (error) {
