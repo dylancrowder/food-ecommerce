@@ -141,6 +141,7 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .container-img-service {
+    display: flex;
     gap: 0px;
   }
 

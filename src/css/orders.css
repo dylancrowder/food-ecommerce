@@ -68,6 +68,7 @@
 }
 
 @media (max-width: 600px) {
+
   .container-cards-menus {
     display: flex;
     flex-direction: column !important;
