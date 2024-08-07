@@ -26,9 +26,9 @@ export default function Home() {
   const fetchToken = async () => {
     try {
       const response = await axios.get(env);
-      localStorage.setItem("token", response.data.token);
-      console.log(response);
+      console.log("este es el response de el env de home", env);
 
+      localStorage.setItem("token", response.data.token);
       window.location.reload();
     } catch (error) {
       console.error("Error fetching token", error);
