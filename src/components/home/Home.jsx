@@ -25,7 +25,7 @@ export default function Home() {
 
   const fetchToken = async () => {
     try {
-      const response = await axios.get(env);
+      const response = await axios.get(`${env}/token`);
       console.log("este es el response de el env de home", env);
 
       localStorage.setItem("token", response.data.token);

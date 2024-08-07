@@ -23,11 +23,10 @@ const Product = () => {
 
   const fetchCategory = async () => {
     const token = localStorage.getItem("token");
-    console.log("este es el env actual ", env);
 
     if (!token) {
       try {
-        const response = await axios.get(env);
+        const response = await axios.get(`${env}/token`);
         localStorage.setItem("token", response.data.token);
         window.location.reload();
       } catch (error) {
