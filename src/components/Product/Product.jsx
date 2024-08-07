@@ -23,6 +23,8 @@ const Product = () => {
 
   const fetchCategory = async () => {
     const token = localStorage.getItem("token");
+    console.log("este es el env actual ", env);
+
     if (!token) {
       try {
         const response = await axios.get("http://localhost:8080/token");
