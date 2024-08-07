@@ -6,8 +6,7 @@ import "../../css/cartShopping.css";
 import { useEffect } from "react";
 
 export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
-  const local = "http://localhost:8080";
-  const online = "https://backendfood.vercel.app";
+  const env = import.meta.env.VITE_API_URL;
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -28,7 +27,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
     );
     try {
       const response = await axios.delete(
-        `${online}/api/cart/delete/${id}`,
+        `${env}/api/cart/delete/${id}`,
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       );
       console.log(response);
@@ -47,7 +46,7 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
     );
     try {
       const response = await axios.post(
-        `${online}/api/cart/increment/${id}`,
+        `${env}/api/cart/increment/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
       );

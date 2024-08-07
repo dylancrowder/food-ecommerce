@@ -15,8 +15,7 @@ import Animations from "../utilitys/Loader";
 import { Error } from "../utilitys/Error";
 
 const Product = () => {
-  const local = "http://localhost:8080";
-  const online = "https://backendfood.vercel.app";
+  const env = import.meta.env.VITE_API_URL;
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,8 +27,6 @@ const Product = () => {
       try {
         const response = await axios.get("http://localhost:8080/token");
         localStorage.setItem("token", response.data.token);
-        console.log(response);
-
         window.location.reload();
       } catch (error) {
         console.error("Error fetching token", error);
@@ -38,7 +35,7 @@ const Product = () => {
 
     try {
       const response = await axios.get(
-        `${online}/api/category/${selectedCategory}`,
+        `${env}/api/category/${selectedCategory}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,

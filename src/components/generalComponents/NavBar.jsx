@@ -11,18 +11,18 @@ import "../../css/navBar.css";
 import { CartShopping } from "./CartShopping";
 
 export default function NavBar() {
+  const env = import.meta.env.VITE_API_URL;
   const [cart, setCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
   const handleCart = async () => {
+    console.log("este es el env", env);
+
     const token = localStorage.getItem("token");
     axios.defaults.withCredentials = true;
     axios.defaults.headers.common["Content-Type"] = "application/json";
 
-    const local = "http://localhost:8080";
-    const online = "https://backendfood.vercel.app";
-
-    const response = await axios.get(`${online}/api/cart/find`, {
+    const response = await axios.get(`${env}/api/cart/find`, {
       headers: { Authorization: `Bearer ${token}` },
       withCredentials: true,
     });

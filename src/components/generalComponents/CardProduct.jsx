@@ -7,8 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../../css/card.css";
 
 export default function CardProduct({ products }) {
-  const local = "http://localhost:8080";
-  const online = "https://backendfood.vercel.app";
+  const env = import.meta.env.VITE_API_URL;
 
   const handleBuy = async (productID) => {
     const token = localStorage.getItem("token");
@@ -17,7 +16,7 @@ export default function CardProduct({ products }) {
 
     try {
       const response = await axios.post(
-        `${online}/api/cart/create`,
+        `${env}/api/cart/create`,
         { productID },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -38,7 +37,7 @@ export default function CardProduct({ products }) {
     } catch (error) {
       const errorMessage = error.message;
 
-      toast.error( errorMessage, {
+      toast.error(errorMessage, {
         autoClose: 1800,
         hideProgressBar: false,
         closeOnClick: true,
