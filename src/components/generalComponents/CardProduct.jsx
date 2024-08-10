@@ -50,6 +50,7 @@ export default function CardProduct({ products }) {
     }
   };
 
+  
   return (
     <>
       {ReactDOM.createPortal(
@@ -75,7 +76,10 @@ export default function CardProduct({ products }) {
                   <p className="price">${card.price}</p>
                 </div>
                 <div className="button-container">
-                  <button className="button-card-compra">
+                  <button
+                
+                    className="button-card-compra"
+                  >
                     Agregar al carrito
                   </button>
                 </div>

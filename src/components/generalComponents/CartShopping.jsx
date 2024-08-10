@@ -17,8 +17,29 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
     }
   }, [cart]);
 
-  const handleBuy = () => {
-    alert("Compra realizada!");
+  const handleBuy = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.post(
+        `${env}/payment/pay`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        }
+      );
+
+      console.log("Response from handleBuy:", response.data);
+
+      // Redirect the user to the payment initiation URL received from the server
+      window.location.href = response.data.redirectUrl;
+    } catch (error) {
+      console.error(
+        "Error in handleBuy:",
+        error.response?.data || error.message
+      );
+      // Handle error, e.g., show an error message to the user
+    }
   };
 
   const handleDeleteItem = async (id) => {
@@ -26,10 +47,10 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
       prevItems.filter((item) => item.product._id !== id)
     );
     try {
-      const response = await axios.delete(
-        `${env}/api/cart/delete/${id}`,
-        { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
-      );
+      const response = await axios.delete(`${env}/api/cart/delete/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+        withCredentials: true,
+      });
       console.log(response);
     } catch (error) {
       console.error("Error deleting item:", error);
@@ -67,10 +88,13 @@ export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
         .filter((item) => item.quantity > 0)
     );
     try {
-      const response = await axios.delete(`${online}/api/cart/decrement/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-        withCredentials: true,
-      });
+      const response = await axios.delete(
+        `${online}/api/cart/decrement/${id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        }
+      );
       console.log(response);
     } catch (error) {
       console.error("Error decrementing item quantity:", error);

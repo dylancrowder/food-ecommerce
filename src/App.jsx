@@ -3,6 +3,7 @@ import Home from "./components/home/Home";
 import "./App.css";
 import { Footer } from "./components/footer/Footer";
 import Product from "./components/Product/Product";
+import { Success } from "./components/utilitys/Success";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Product />} />
+        <Route path="/success-pay" element={<Success />} />
       </Routes>
       <Footer />
     </Router>
