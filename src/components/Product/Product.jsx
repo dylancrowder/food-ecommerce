@@ -1,8 +1,7 @@
 import "./product.css";
 import { useState, useEffect } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+
+
 import "aos/dist/aos.css";
 import axios from "axios";
 import AOS from "aos";
@@ -13,6 +12,7 @@ import CardProduct from "../generalComponents/CardProduct";
 import NavBar from "../generalComponents/NavBar";
 import Animations from "../utilitys/Loader";
 import { Error } from "../utilitys/Error";
+import { Carrousel } from "./products-component/carrousel.component";
 
 const Product = () => {
   const env = import.meta.env.VITE_API_URL;
@@ -66,15 +66,7 @@ const Product = () => {
     fetchCategory();
   }, [selectedCategory]);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
+
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -88,28 +80,7 @@ const Product = () => {
             <NavBar />
           </div>
 
-          <div className="product-carousel">
-            <Slider {...settings}>
-              <div className="slide-item">
-                <h3>1</h3>
-              </div>
-              <div className="slide-item">
-                <h3>2</h3>
-              </div>
-              <div className="slide-item">
-                <h3>3</h3>
-              </div>
-              <div className="slide-item">
-                <h3>4</h3>
-              </div>
-              <div className="slide-item">
-                <h3>5</h3>
-              </div>
-              <div className="slide-item">
-                <h3>6</h3>
-              </div>
-            </Slider>
-          </div>
+          <Carrousel />
         </div>
 
         <div className="cnt">
