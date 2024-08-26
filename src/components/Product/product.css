@@ -9,10 +9,8 @@
   background-color: #dbd805;
 }
 
-
-
 .filter-category {
-  width: 84%;
+  width: 80%;
   margin: auto;
   border-radius: 16px;
   background-color: #e67e22;
@@ -63,8 +61,9 @@
   justify-content: center;
 }
 .filter-title {
-  margin: 0px 0px;
-  font-size: 1.2rem;
+  margin-left: 72px !important;
+  margin: 0px 10px;
+  font-size: 1.5rem;
 }
 
 .filter-title-container {
@@ -126,7 +125,9 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .filter-title {
-    margin: 0px 6px;
+    margin: 0px 6px 0px;
+    margin-left: 0px !important;
+    color: #222222;
   }
   .filter-category {
     display: none;
@@ -143,10 +144,10 @@
   .select {
     border: 1px solid black;
     border-radius: 30px;
-    height: 43px;
-    width: 75%;
+    height: 53px;
+    width: 90%;
 
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
     background-color: #188132;
     color: white;

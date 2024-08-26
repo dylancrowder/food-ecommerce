@@ -26,8 +26,23 @@ export function Carrousel() {
 
             <div className="slide-caption">
               <h3>50% Off on Pizzas!</h3>
-              <p>
+
+              <p className="subtite-carrousel">
                 Enjoy our delicious pizzas with a 50% discount this weekend!
+              </p>
+            </div>
+          </div>
+
+          <div className="slide-item">
+            <div className="img-content-car">
+              <img className="img-carrousel" src={comida} alt="Promotion 1" />
+            </div>
+
+            <div className="slide-caption">
+              <h3>Buy 1 Get 1 Free</h3>
+
+              <p className="subtite-carrousel">
+                Order any burger and get another one absolutely free!
               </p>
             </div>
           </div>
@@ -37,18 +52,9 @@ export function Carrousel() {
             </div>
 
             <div className="slide-caption">
-              <h3>Buy 1 Get 1 Free</h3>
-              <p>Order any burger and get another one absolutely free!</p>
-            </div>
-          </div>
-          <div className="slide-item">
-            <div className="img-content-car">
-              <img className="img-carrousel" src={comida} alt="Promotion 1" />
-            </div>
-
-            <div className="slide-caption">
               <h3>Family Pasta Combo</h3>
-              <p>
+
+              <p className="subtite-carrousel">
                 Get a special combo of pasta for the entire family at just
                 $19.99!
               </p>
