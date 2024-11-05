@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #dbd805;
+  background-color: var(--color-principal);
   position: relative;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .custom-shape-divider-bottom-1720114021 .shape-fill {
-  fill: #e67e22;
+  fill: var(--color-secundario);
 }
 
 .container-header {
@@ -78,7 +78,7 @@
   font-size: 1.2rem;
   color: rgb(253, 252, 252);
   border: none;
-  background-color: #188132;
+  background-color: var(--color-botones);
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -86,7 +86,7 @@
 }
 
 .button-header:hover {
-  background-color: #e67e22;
+  background-color: var(--color-botones-hover);
 }
 
 @media (max-width: 600px) {

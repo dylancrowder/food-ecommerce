@@ -7,6 +7,16 @@
   font-style: normal;
 }
 
+
+:root {
+  --color-principal: #fcfc40;
+  --color-secundario: #fc9e40; 
+  --color-botones:#144e0e;
+  --color-botones-hover: #0e3a0a;
+  
+}
+
+
 body {
   margin: 0;
   padding: 0;

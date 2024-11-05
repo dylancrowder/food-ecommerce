@@ -1,7 +1,6 @@
 import "./product.css";
 import { useState, useEffect } from "react";
 
-
 import "aos/dist/aos.css";
 import axios from "axios";
 import AOS from "aos";
@@ -12,7 +11,7 @@ import CardProduct from "../generalComponents/CardProduct";
 import NavBar from "../generalComponents/NavBar";
 import Animations from "../utilitys/Loader";
 import { Error } from "../utilitys/Error";
-import { Carrousel } from "./products-component/carrousel.component";
+
 
 const Product = () => {
   const env = import.meta.env.VITE_API_URL;
@@ -66,8 +65,6 @@ const Product = () => {
     fetchCategory();
   }, [selectedCategory]);
 
-
-
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
@@ -79,17 +76,12 @@ const Product = () => {
           <div className="NavBar-container">
             <NavBar />
           </div>
-
-          <Carrousel />
         </div>
 
         <div className="cnt">
-          <div className="filter-title-container">
-            <h2 className="filter-title">Filter</h2>
-            <FontAwesomeIcon className="icono" icon={faArrowDownWideShort} />
-          </div>
-
           <div className="filter-category">
+            <FontAwesomeIcon className="icono" icon={faArrowDownWideShort} />
+
             <button
               onClick={() => setSelectedCategory("All")}
               className={selectedCategory === "All" ? "active" : ""}

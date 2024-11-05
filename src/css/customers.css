@@ -2,9 +2,8 @@
   display: flex;
   padding-block: 0px;
   overflow: hidden;
-  background-color: #dbd805;
+  background-color: var(--color-principal);
   padding-bottom: 60px;
-
 }
 
 .client-card {
@@ -99,7 +98,6 @@ span {
 }
 .title-customers {
   color: #333 !important;
-
 }
 .subtitle-customers {
   font-size: 1.2rem !important;
@@ -108,5 +106,4 @@ span {
 }
 
 @media (max-width: 600px) {
-
 }

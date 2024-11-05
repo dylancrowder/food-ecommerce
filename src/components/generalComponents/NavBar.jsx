@@ -36,11 +36,11 @@ export default function NavBar() {
         <nav className="nav-container">
           <Link className="link-a" to="/">
             <FontAwesomeIcon className="icon-nav" icon={faHome} size="1x" />
-            <p className="parraf-nav">Home</p>
+            <p className="parraf-nav">Inicio</p>
           </Link>
           <Link className="link-a" to="/products">
             <FontAwesomeIcon className="icon-nav" icon={faCartPlus} size="1x" />
-            <p className="parraf-nav">Products</p>
+            <p className="parraf-nav">Productos</p>
           </Link>
 
           <Link className="link-a" onClick={handleCart}>
@@ -49,7 +49,7 @@ export default function NavBar() {
               icon={faShoppingBag}
               size="1x"
             />
-            <p className="parraf-nav">Cart</p>
+            <p className="parraf-nav">Carrito</p>
           </Link>
         </nav>
         <CartShopping

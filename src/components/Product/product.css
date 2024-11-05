@@ -6,21 +6,25 @@
 }
 
 .container-products {
-  background-color: #dbd805;
+  background-color: var(--color-principal);
 }
 
 .filter-category {
   width: 80%;
   margin: auto;
-  border-radius: 16px;
-  background-color: #e67e22;
   height: 90px;
-  color: #bb2626;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 80px;
-  border: 1px solid black;
+
+}
+
+.icono {
+  font-size: 50px;
+  margin-right: 10px !important;
+  margin: 0px;
+  padding: 0px;
 }
 
 .filter-category button {
@@ -72,10 +76,6 @@
   align-items: center;
   margin-top: 80px;
   margin-left: 120px;
-}
-.icono {
-  margin: 0px;
-  padding: 0px;
 }
 
 /* product.css */

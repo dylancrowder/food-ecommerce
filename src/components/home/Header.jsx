@@ -24,17 +24,18 @@ export function Header({ img }) {
         </div>
         <div className="container-header">
           <div className="container-text-header">
-            <h1 className="title-header-text">We deliver it to you.</h1>
+            <h1 className="title-header-text">Te lo entregamos.</h1>
             <p className="p-header-paragraph">
-              Come to our store and try the best food, or you can also order it from your home.
+              Ven a nuestra tienda y prueba la mejor comida, o también puedes
+              pedirla desde tu casa.
             </p>
             <Link to="/products" className="button-header-link">
-              <button className="button-header">Shop Now</button>
+              <button className="button-header">Compra Ahora</button>
             </Link>
           </div>
           <div></div>
           <div data-aos="fade-left" className="container-img-header">
-            <img className="img-header" src={img} alt="Delicious food" />
+            <img className="img-header" src={img} alt="Comida deliciosa" />
           </div>
         </div>
       </header>
