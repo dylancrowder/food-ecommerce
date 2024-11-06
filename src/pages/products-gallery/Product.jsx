@@ -7,11 +7,10 @@ import AOS from "aos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownWideShort } from "@fortawesome/free-solid-svg-icons";
 
-import CardProduct from "../generalComponents/CardProduct";
-import NavBar from "../generalComponents/NavBar";
-import Animations from "../utilitys/Loader";
-import { Error } from "../utilitys/Error";
-
+import CardProduct from "../../components/card/CardProduct";
+import NavBar from "../../components/navbar/NavBar";
+import Animations from "../../utilitys/Loader";
+import { Error } from "../../utilitys/Error";
 
 const Product = () => {
   const env = import.meta.env.VITE_API_URL;

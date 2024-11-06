@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { faTimes, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import "../../css/cartShopping.css";
+import "./cartShopping.css";
 import { useEffect } from "react";
 
 export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {

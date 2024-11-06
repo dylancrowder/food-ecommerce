@@ -1,7 +1,7 @@
-import { Customers } from "./Customers";
-import { Header } from "./Header";
-import { Orders } from "./Orders";
-import { Prestation } from "./Prestations";
+import { Customers } from "./customers/Customers";
+import { Header } from "./header/Header";
+import { Orders } from "./menus/Menus";
+import { Prestation } from "./prestations/Prestations";
 import delivery from "../../img/delivery.png";
 import order from "../../img/order.png";
 import courier from "../../img/courier.png";
@@ -14,7 +14,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import axios from "axios";
-
+import "./home-movile.css";
 export default function Home() {
   const env = import.meta.env.VITE_API_URL;
   useEffect(() => {

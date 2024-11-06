@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import NavBar from "../generalComponents/NavBar";
+import NavBar from "../../../components/navbar/NavBar";
 import { Link } from "react-router-dom";
-import "../../css/header.css";
+import "./header.css";
 
 export function Header({ img }) {
   return (

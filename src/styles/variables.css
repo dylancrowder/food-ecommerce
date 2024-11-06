@@ -1,0 +1,15 @@
+:root {
+  --color-principal: #fcfc40;
+  --color-secundario: #fc9e40;
+  --color-botones: #188132;
+  --color-botones-hover: #08531b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  max-width: 100% !important;
+}

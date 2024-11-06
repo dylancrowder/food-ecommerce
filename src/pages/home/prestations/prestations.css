@@ -88,14 +88,3 @@ svg {
   color: #161313;
 }
 
-@media (max-width: 600px) {
-  svg {
-    position: relative;
-    display: block;
-    width: 200%;
-    height: 100px;
-    transform: rotateY(180deg);
-    overflow: hidden;
-    margin-bottom: -1px;
-  }
-}

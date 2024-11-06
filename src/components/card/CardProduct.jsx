@@ -4,7 +4,7 @@ import axios from "axios";
 import ReactDOM from "react-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../../css/card.css";
+import "./card.css";
 
 export default function CardProduct({ products }) {
   const env = import.meta.env.VITE_API_URL;

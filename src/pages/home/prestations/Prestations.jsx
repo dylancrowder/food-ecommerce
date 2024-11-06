@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "../../css/prestations.css";
+import "./prestations.css";
 export function Prestation({ order, delivery, courier }) {
   return (
     <>

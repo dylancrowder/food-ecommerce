@@ -1,10 +1,10 @@
-// src/components/Orders.js
-import "../../css/orders.css";
+
+import "./menus.css";
 import { Link } from "react-router-dom";
-import useFetchProducts from "../../hooks/Hooks";
-import CardProduct from "../generalComponents/CardProduct";
-import Animations from "../utilitys/Loader";
-import { Error } from "../utilitys/Error";
+import useFetchProducts from "../../../hooks/Hooks"
+import CardProduct from "../../../components/card/CardProduct";
+import Animations from "../../../utilitys/Loader";
+import { Error } from "../../../utilitys/Error";
 
 export function Orders() {
   const env = import.meta.env.VITE_API_URL;

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "../../css/customers.css"
+import "./customers.css"
 export function Customers({
   foodCustomer2,
   foodCustomer3,

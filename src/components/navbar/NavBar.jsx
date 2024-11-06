@@ -7,8 +7,8 @@ import {
   faShoppingBag,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import "../../css/navBar.css";
-import { CartShopping } from "./CartShopping";
+import "./navBar.css";
+import { CartShopping } from "../../pages/cart/CartShopping";
 
 export default function NavBar() {
   const env = import.meta.env.VITE_API_URL;
