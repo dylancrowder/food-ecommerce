@@ -16,30 +16,10 @@ import AOS from "aos";
 import axios from "axios";
 import "./home-movile.css";
 export default function Home() {
-  const env = import.meta.env.VITE_API_URL;
   useEffect(() => {
     AOS.init({
       duration: 1500,
     });
-  }, []);
-
-  const fetchToken = async () => {
-    try {
-      const response = await axios.get(`${env}/token`);
-      console.log("este es el response de el env de home", env);
-
-      localStorage.setItem("token", response.data.token);
-      window.location.reload();
-    } catch (error) {
-      console.error("Error fetching token", error);
-    }
-  };
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      fetchToken();
-    }
   }, []);
 
   return (

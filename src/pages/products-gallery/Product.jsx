@@ -85,7 +85,7 @@ const Product = () => {
               onClick={() => setSelectedCategory("All")}
               className={selectedCategory === "All" ? "active" : ""}
             >
-              {"All"}
+              {"Todas"}
             </button>
             <button
               onClick={() => setSelectedCategory("Pastas")}
