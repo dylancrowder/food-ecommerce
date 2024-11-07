@@ -126,10 +126,8 @@
 
 .button-card-compra {
   width: 100%;
-  height: 48px; /* Cambiado de 42px a 48px */
-  background-color: var(
-    --color-botones
-  ); /* Cambié de color específico a la variable --color-botones */
+  height: 48px;
+  background-color: var(--color-botones);
   border: 1px solid black;
   color: white;
   border-radius: 8px; /* Cambiado a 8px */
@@ -145,7 +143,7 @@
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .container-img-service {
     display: flex;
     gap: 0px; /* No es necesario cambiar */
@@ -156,7 +154,7 @@
   }
 
   .card-footer {
-    width: 88%; /* Cambiado de 94% a 88% para que sea un múltiplo de 8 */
+    width: 92%; /* Cambiado de 94% a 88% para que sea un múltiplo de 8 */
   }
 
   .food-img-container {
