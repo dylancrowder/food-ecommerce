@@ -13,9 +13,14 @@ import img from "../../img/comida.png";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
-import axios from "axios";
 import "./home-movile.css";
+import useAuth from "../../hooks/useAuth";
 export default function Home() {
+  const env = import.meta.env.VITE_API_URL;
+
+  //Hoock validacion
+  useAuth(env);
+
   useEffect(() => {
     AOS.init({
       duration: 1500,

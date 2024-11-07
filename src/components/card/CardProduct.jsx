@@ -5,9 +5,12 @@ import ReactDOM from "react-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./card.css";
+import useAuth from "../../hooks/useAuth";
 
 export default function CardProduct({ products }) {
   const env = import.meta.env.VITE_API_URL;
+
+  useAuth(env);
 
   const handleBuy = async (productID) => {
     const token = localStorage.getItem("token");
@@ -50,7 +53,6 @@ export default function CardProduct({ products }) {
     }
   };
 
-  
   return (
     <>
       {ReactDOM.createPortal(
@@ -76,10 +78,7 @@ export default function CardProduct({ products }) {
                   <p className="price">${card.price}</p>
                 </div>
                 <div className="button-container">
-                  <button
-                
-                    className="button-card-compra"
-                  >
+                  <button className="button-card-compra">
                     Agregar al carrito
                   </button>
                 </div>

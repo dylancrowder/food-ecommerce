@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import "./cartShopping.css";
 import { useEffect } from "react";
+import useAuth from "../../hooks/useAuth";
 
 export function CartShopping({ cart, cartItems, handleCart, setCartItems }) {
   const env = import.meta.env.VITE_API_URL;
-  const token = localStorage.getItem("token");
 
+  useAuth(env);
   useEffect(() => {
     if (cart) {
       document.body.style.overflow = "hidden";
