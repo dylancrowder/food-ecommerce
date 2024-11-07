@@ -16,8 +16,6 @@ export default function NavBar() {
   const [cartItems, setCartItems] = useState([]);
 
   const handleCart = async () => {
-    console.log("este es el env", env);
-
     const token = localStorage.getItem("token");
     axios.defaults.withCredentials = true;
     axios.defaults.headers.common["Content-Type"] = "application/json";
