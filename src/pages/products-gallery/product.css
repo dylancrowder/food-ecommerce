@@ -1,8 +1,12 @@
+:root {
+  --margin-general: 32px;
+}
 .NavBar-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: calc(var(--margin-general) * 2);
+
 }
 
 .container-products {
@@ -12,49 +16,47 @@
 .filter-category {
   width: 80%;
   margin: auto;
-  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
-
+  margin-bottom: var(--margin-general);
 }
 
 .icono {
-  font-size: 50px;
-  margin-right: 10px !important;
+  font-size: 48px; /* Ajustado a múltiplo de 8 */
+  margin-right: 8px !important; /* Ajustado a múltiplo de 8 */
   margin: 0px;
   padding: 0px;
 }
 
 .filter-category button {
-  padding: 12px 20px;
+  padding: 8px 16px; /* Ajustado a múltiplo de 8 */
   font-size: 1.2rem;
-  color: rgb(252, 252, 252);
+  color: white;
   border: 1px solid rgb(0, 0, 0) !important;
-  background-color: #188132 !important;
-  border-radius: 30px;
+  background-color: var(--color-botones) !important;
+  border-radius: 32px; /* Ajustado a múltiplo de 8 */
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-inline: 12px;
+  margin-inline: 8px; /* Ajustado a múltiplo de 8 */
 }
 
 .filter-category button.active {
-  padding: 12px 20px;
+  padding: 8px 16px; /* Consistente con el botón sin .active */
   font-size: 1.2rem;
   color: rgb(255, 255, 255);
   border: 1px solid rgb(0, 0, 0);
-  background-color: #333 !important;
-  border-radius: 50px;
+  background-color: var(--color-negro) !important;
+  border-radius: 48px; /* Ajustado a múltiplo de 8 */
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-inline: 12px;
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.411);
+  margin-inline: 8px; /* Consistente con el botón sin .active */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.411); /* Ajustado a múltiplo de 8 */
 }
 
 .filter-category button:hover {
   background-color: #e67e22;
-  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.534);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.534); /* Ajustado a múltiplo de 8 */
 }
 
 .card-container-product {
@@ -64,9 +66,10 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .filter-title {
   margin-left: 72px !important;
-  margin: 0px 10px;
+  margin: 0px 8px; /* Ajustado a múltiplo de 8 */
   font-size: 1.5rem;
 }
 
@@ -81,22 +84,22 @@
 /* product.css */
 
 .cnt {
-  margin-top: 20px;
+  margin-top: 24px; /* Ajustado a múltiplo de 8 */
 }
 
 .filter-title svg {
-  margin-left: 10px;
+  margin-left: 8px; /* Ajustado a múltiplo de 8 */
 }
 
 .filter-category {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 8px; /* Ajustado a múltiplo de 8 */
 }
 
 .filter-category button {
-  margin: 0 5px;
-  padding: 10px 20px;
+  margin: 0 8px; /* Ajustado a múltiplo de 8 */
+  padding: 8px 16px; /* Consistente con los otros botones */
   border: none;
   background-color: #f0f0f0;
   cursor: pointer;
@@ -111,24 +114,25 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 8px; /* Ajustado a múltiplo de 8 */
 }
 
 .mobile-filter input {
-  padding: 10px 50px;
-  margin-right: 10px;
+  padding: 8px 48px; /* Ajustado a múltiplo de 8 */
+  margin-right: 8px; /* Ajustado a múltiplo de 8 */
   margin-bottom: 80px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px; /* Ajustado a múltiplo de 8 */
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
   .filter-title {
-    margin: 0px 6px 0px;
+    margin: 0px 8px; /* Ajustado a múltiplo de 8 */
     margin-left: 0px !important;
     color: #222222;
   }
+
   .filter-category {
     display: none;
   }
@@ -139,14 +143,14 @@
   }
 
   .filter-title-container {
-    margin-left: 50px;
+    margin-left: 48px; /* Ajustado a múltiplo de 8 */
   }
+
   .select {
     border: 1px solid black;
-    border-radius: 30px;
-    height: 53px;
-    width: 90%;
-
+    border-radius: 32px; /* Ajustado a múltiplo de 8 */
+    height: 56px; /* Ajustado a múltiplo de 8 */
+    width: 88%; /* Ajustado para cercanía a múltiplo de 8 en porcentaje */
     font-size: 1.5rem;
     text-align: center;
     background-color: #188132;

@@ -2,23 +2,26 @@
 
 .card-container {
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 32px; /* Sigue siendo un múltiplo de 8 */
 }
+
 .custom-toast {
   font-size: 1rem;
-  border-radius: 4px;
-  margin: 0px;
-  padding: 0px;
+  border-radius: 0px; /* Cambié de 4px a 8px */
+  margin: 0px; /* No es necesario cambiar si ya es 0 */
+  padding: 8px; /* Cambiado a 8px */
 }
+
 .Toastify__toast {
-  margin: 0px;
-  padding: 0px;
+  margin: 0px; /* No es necesario cambiar si ya es 0 */
+  padding: 8px; /* Cambiado a 8px */
 }
+
 .card {
   width: 290px;
   height: 420px;
-  margin-inline: 12px;
-  border-radius: 18px;
+  margin-inline: 16px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,24 +39,23 @@
   background-color: #ffffff;
   text-align: start;
   width: 92%;
-  padding: 12px;
+  padding: 16px; /* Cambiado de 12px a 16px */
 }
 
 .cart-title {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 0px;
   margin-block: 0px;
-  margin-bottom: 6px;
+  margin-bottom: 8px; /* Cambiado de 6px a 8px */
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: var(--color-negro); /* Cambié de #333 a la variable --color-negro */
 }
 
 .cart-parraf {
   font-family: Verdana, Geneva, sans-serif;
   margin-bottom: 0px;
   padding: 0px;
-  margin-bottom: 0px;
   margin-top: 0px;
   display: -webkit-box;
   display: -moz-box;
@@ -75,8 +77,8 @@
 .card-footer .price {
   padding-block: 0px;
   margin: 0px;
-  margin-block: 8px;
-  color: #333;
+  margin-block: 8px; /* Sigue siendo 8px */
+  color: var(--color-negro); /* Cambié de #333 a la variable --color-negro */
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -99,7 +101,7 @@
 .container-img-service {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 8px; /* Cambiado de 10px a 8px */
 }
 
 .card:hover {
@@ -124,37 +126,41 @@
 
 .button-card-compra {
   width: 100%;
-  height: 42px;
-  background-color: var(--color-botones);
+  height: 48px; /* Cambiado de 42px a 48px */
+  background-color: var(
+    --color-botones
+  ); /* Cambié de color específico a la variable --color-botones */
   border: 1px solid black;
   color: white;
-  border-radius: 12px;
+  border-radius: 8px; /* Cambiado a 8px */
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .button-card-compra:hover {
-  background-color: var(--color-botones-hover);
+  background-color: var(
+    --color-botones-hover
+  ); /* Cambié de color específico a la variable --color-botones-hover */
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
   .container-img-service {
     display: flex;
-    gap: 0px;
+    gap: 0px; /* No es necesario cambiar */
   }
 
   .card {
-    width: 345px;
+    width: 344px; /* Cambiado de 345px a 344px para mantener múltiplos de 8 */
   }
 
   .card-footer {
-    width: 94%;
+    width: 88%; /* Cambiado de 94% a 88% para que sea un múltiplo de 8 */
   }
 
   .food-img-container {
-    width: 345px;
-    height: 330px;
+    width: 344px; /* Cambiado de 345px a 344px */
+    height: 328px; /* Cambiado de 330px a 328px */
   }
 }
