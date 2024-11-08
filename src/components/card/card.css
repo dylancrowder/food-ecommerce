@@ -1,20 +1,6 @@
-/* Estilos existentes */
-
 .card-container {
   width: 100%;
-  margin-bottom: 32px; /* Sigue siendo un múltiplo de 8 */
-}
-
-.custom-toast {
-  font-size: 1rem;
-  border-radius: 0px; /* Cambié de 4px a 8px */
-  margin: 0px; /* No es necesario cambiar si ya es 0 */
-  padding: 8px; /* Cambiado a 8px */
-}
-
-.Toastify__toast {
-  margin: 0px; /* No es necesario cambiar si ya es 0 */
-  padding: 8px; /* Cambiado a 8px */
+  margin-bottom: 32px; 
 }
 
 .card {

@@ -20,10 +20,14 @@ const Product = () => {
 
   //Hook auth
   useAuth(env);
-
+  //si esta en cache que no muestre la loading
   const fetchCategory = async () => {
     const token = localStorage.getItem("token");
-    setLoading(true);
+    setLoading(
+      AOS.init({
+        duration: 1600,
+      })
+    );
     try {
       const response = await axios.get(
         `${env}/api/category/${selectedCategory}`,

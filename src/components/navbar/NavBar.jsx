@@ -28,6 +28,7 @@ export default function NavBar() {
     setCartItems(response.data.items);
   };
 
+  //https://github.com/goldbergyoni/nodebestpractices?tab=readme-ov-file
   return (
     <>
       <div className="links-h">

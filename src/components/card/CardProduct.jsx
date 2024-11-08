@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./card.css";
+import "../../styles/toast.css";
 import useAuth from "../../hooks/useAuth";
 
 export default function CardProduct({ products }) {
@@ -27,7 +28,7 @@ export default function CardProduct({ products }) {
         }
       );
 
-      toast.success("Product added successfully", {
+      toast.success("Producto agregado.", {
         autoClose: 1800,
         hideProgressBar: false,
         closeOnClick: true,
@@ -40,7 +41,7 @@ export default function CardProduct({ products }) {
     } catch (error) {
       const errorMessage = error.message;
 
-      toast.error(errorMessage, {
+      toast.error("Error al agregar.", {
         autoClose: 1800,
         hideProgressBar: false,
         closeOnClick: true,
