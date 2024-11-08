@@ -23,7 +23,7 @@ const Product = () => {
 
   const fetchCategory = async () => {
     const token = localStorage.getItem("token");
-
+    setLoading(true);
     try {
       const response = await axios.get(
         `${env}/api/category/${selectedCategory}`,
@@ -42,7 +42,7 @@ const Product = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1500,
+      duration: 1600,
     });
   }, []);
 
@@ -124,7 +124,7 @@ const Product = () => {
             value={selectedCategory}
             onChange={handleCategoryChange}
           >
-            <option value="All">All</option>
+            <option value="All">Todos los menus</option>
             <option value="Pastas">Pastas</option>
             <option value="Hamburguesa">Hamburguesa</option>
             <option value="Pizza">Pizza</option>

@@ -117,17 +117,17 @@
 }
 
 .mobile-filter input {
-  padding: 8px 48px; /* Ajustado a múltiplo de 8 */
-  margin-right: 8px; /* Ajustado a múltiplo de 8 */
+  padding: 8px 48px;
+  margin-right: 8px;
   margin-bottom: 80px;
   border: 1px solid #ccc;
-  border-radius: 8px; /* Ajustado a múltiplo de 8 */
+  border-radius: 8px;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
   .filter-title {
-    margin: 0px 8px; /* Ajustado a múltiplo de 8 */
+    margin: 0px 8px;
     margin-left: 0px !important;
     color: #222222;
   }
@@ -142,7 +142,7 @@
   }
 
   .filter-title-container {
-    margin-left: 48px; /* Ajustado a múltiplo de 8 */
+    margin-left: 48px;
   }
 
   .select {
