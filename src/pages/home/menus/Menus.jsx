@@ -3,7 +3,7 @@ import "./menus.css";
 import { Link } from "react-router-dom";
 import useFetchProducts from "../../../hooks/Hooks"
 import CardProduct from "../../../components/card/CardProduct";
-import Animations from "../../../utilitys/Loader";
+import { Animations } from "../../../utilitys/gallery-skeleton";
 import { Error } from "../../../utilitys/Error";
 
 export function Orders() {
